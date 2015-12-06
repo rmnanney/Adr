@@ -1,0 +1,149 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: ryan
+ * Date: 12/6/15
+ * Time: 9:44 AM
+ */
+
+namespace Adr\Response;
+
+require_once __DIR__ . '/../Date/IncidentDate.php';
+require_once __DIR__ . '/../Date/ConvictionDate.php';
+require_once __DIR__ . '/../State.php';
+require_once __DIR__ . '/Incident.php';
+
+use Adr\IncidentDate;
+use Adr\ConvictionDate;
+use Adr\State;
+use Adr\Incident;
+
+class Violation {
+
+    private $type;
+    private $mnemonic;
+    private $incidentdate;
+    private $convictiondate;
+    private $state;
+    private $location;
+    private $incident;
+    private $actualspeed;
+    private $postedspeed;
+    private $disposition;
+    private $docket;
+
+    public function __construct(\DOMElement $xmlNode){
+        foreach($xmlNode->childNodes as $element){
+            if(!$element instanceof \DOMText) {
+                switch (strtoupper($element->nodeName)) {
+                    case 'INCIDENTDATE':
+                        $this->{strtolower($element->nodeName)} = new IncidentDate($element);
+                        break;
+                    case 'CONVICTIONDATE':
+                        $this->{strtolower($element->nodeName)} = new ConvictionDate($element);
+                        break;
+                    case 'STATE':
+                        $this->{strtolower($element->nodeName)} = new State($element);
+                        break;
+                    case 'INCIDENT':
+                        $this->{strtolower($element->nodeName)} = new Incident($element);
+                        break;
+                    default:
+                        $this->{strtolower($element->nodeName)} = $element->nodeValue;
+                        break;
+                }
+            }
+        }
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getMnemonic()
+    {
+        return $this->mnemonic;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIncidentdate()
+    {
+        return $this->incidentdate;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getConvictiondate()
+    {
+        return $this->convictiondate;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getState()
+    {
+        return $this->state;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLocation()
+    {
+        return $this->location;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIncident()
+    {
+        return $this->incident;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getActualspeed()
+    {
+        return $this->actualspeed;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPostedspeed()
+    {
+        return $this->postedspeed;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDisposition()
+    {
+        return $this->disposition;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDocket()
+    {
+        return $this->docket;
+    }
+
+
+
+}
