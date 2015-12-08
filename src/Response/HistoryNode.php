@@ -37,4 +37,30 @@ class HistoryNode {
             }
         }
     }
+
+    public function hasViolations(){
+        return (count($this->viol))?true:false;
+    }
+
+    public function hasActions(){
+        return (count($this->action))?true:false;
+    }
+
+    /**
+     * @return array
+     */
+    public function getViolations()
+    {
+        return $this->viol;
+    }
+
+    /**
+     * @return array
+     */
+    public function getActions()
+    {
+        return $this->action;
+    }
+
+
 }

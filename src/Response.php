@@ -88,13 +88,63 @@ class Response extends \DOMDocument {
 
     }
 
-    public function getOrderObjects(){
+    /**
+     * @return array
+     */
+    public function getOrderNodes()
+    {
         return $this->orderNodes;
     }
 
-    public function getReturnObjects(){
+    /**
+     * @return array
+     */
+    public function getReturnNodes()
+    {
         return $this->returnNodes;
     }
+
+    /**
+     * @return array
+     */
+    public function getDriverNodes()
+    {
+        return $this->driverNodes;
+    }
+
+    /**
+     * @return array
+     */
+    public function getLicenseNodes()
+    {
+        return $this->licenseNodes;
+    }
+
+    /**
+     * @return array
+     */
+    public function getMiscNodes()
+    {
+        return $this->miscNodes;
+    }
+
+    /**
+     * @return array
+     */
+    public function getAdditionalNodes()
+    {
+        return $this->additionalNodes;
+    }
+
+    /**
+     * @return array
+     */
+    public function getHistoryNodes()
+    {
+        return $this->historyNodes;
+    }
+
+
 
     public function getScore(){
 

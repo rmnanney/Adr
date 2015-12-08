@@ -34,6 +34,7 @@ class Date {
                 $this->{strtolower($element->nodeName)} = $element->nodeValue;
             }
         }
+        $this->epoch = strtotime($this->year . '-' . $this->month . '-' . $this->day);
     }
 
     /**
