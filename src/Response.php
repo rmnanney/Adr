@@ -85,7 +85,16 @@ class Response extends \DOMDocument {
         foreach($result as $node){
             $this->historyNodes[] = new HistoryNode($node);
         }
+    }
 
+    public function save($param){
+        if($param instanceof \mysqli){
+            //Persist to the SQL schema of your choosing.
+
+        }else{
+            //Do the usual DOMDocument::save() instead.
+            parent::save($param);
+        }
     }
 
     /**

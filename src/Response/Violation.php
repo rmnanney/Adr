@@ -37,16 +37,16 @@ class Violation {
             if(!$element instanceof \DOMText) {
                 switch (strtoupper($element->nodeName)) {
                     case 'INCIDENTDATE':
-                        $this->{strtolower($element->nodeName)} = new IncidentDate($element);
+                        $this->incidentdate = new IncidentDate($element);
                         break;
                     case 'CONVICTIONDATE':
-                        $this->{strtolower($element->nodeName)} = new ConvictionDate($element);
+                        $this->convictiondate = new ConvictionDate($element);
                         break;
                     case 'STATE':
-                        $this->{strtolower($element->nodeName)} = new State($element);
+                        $this->state = new State($element);
                         break;
                     case 'INCIDENT':
-                        $this->{strtolower($element->nodeName)} = new Incident($element);
+                        $this->incident = new Incident($element);
                         break;
                     default:
                         $this->{strtolower($element->nodeName)} = $element->nodeValue;
@@ -54,6 +54,10 @@ class Violation {
                 }
             }
         }
+    }
+
+    public function getTimeSinceIncident(){
+        return time() - $this->incidentdate->getEpoch();
     }
 
     /**
