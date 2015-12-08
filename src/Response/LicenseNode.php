@@ -9,8 +9,8 @@
 namespace Adr\Response;
 
 
-use Adr\ExpireDate;
-use Adr\IssueDate;
+use Adr\Date\ExpireDate;
+use Adr\Date\IssueDate;
 use Adr\License\Restriction;
 use Adr\License\Status;
 

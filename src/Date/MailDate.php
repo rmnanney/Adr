@@ -6,9 +6,11 @@
  * Time: 11:09 AM
  */
 
-namespace Adr;
+namespace Adr\Date;
 
 require_once __DIR__ . '/../Date.php';
+
+use Adr\Date;
 
 class MailDate extends Date {
 

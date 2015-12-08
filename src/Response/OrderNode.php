@@ -15,7 +15,7 @@ require_once __DIR__ . '/../Date/Dob.php';
 require_once __DIR__ . '/../State.php';
 
 use Adr\Date;
-use Adr\Dob;
+use Adr\Date\Dob;
 use Adr\State;
 use Adr\Time;
 

@@ -6,9 +6,11 @@
  * Time: 9:47 AM
  */
 
-namespace Adr;
+namespace Adr\Date;
 
 require_once __DIR__ . '/../Date.php';
+
+use Adr\Date;
 
 class IncidentDate extends Date {
 

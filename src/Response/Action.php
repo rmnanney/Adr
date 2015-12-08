@@ -13,6 +13,11 @@ require_once __DIR__ . '/../Date/ClearDate.php';
 require_once __DIR__ . '/../Date/ActionEndDate.php';
 require_once __DIR__ . '/../Date/MailDate.php';
 
+use Adr\Date\IncidentDate;
+use Adr\Date\MailDate;
+use Adr\Date\ClearDate;
+use Adr\Date\ActionEndDate;
+
 class Action {
 
     private $type;
