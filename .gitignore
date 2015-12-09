@@ -2,4 +2,4 @@
 # Created by .ignore support plugin (hsz.mobi)
 .idea
 /vendor/
-/tests/dbconfig.ini
+/src/examples/dbconfig.ini
