@@ -1,0 +1,307 @@
+<ADR>
+	<Summary>
+		<Online>
+			<Error>0</Error>
+			<ErrorDescription>no error</ErrorDescription>
+			<Result>1</Result>
+			<ResultDescription>successful</ResultDescription>
+			<Message>Login was Successful</Message>
+			<DaysLeft>60</DaysLeft>
+			<ShowWarning>N</ShowWarning>
+		</Online>
+		<Orders>
+			<Order>
+				<Host>OL</Host>
+				<Last>LastName1</Last>
+				<License>1234-4321-1234-00</License>
+				<Miscellaneous>1234567890</Miscellaneous>
+				<Status>Success</Status>
+			</Order>
+		</Orders>
+		<Reports>
+			<Report>
+				<Host>OL</Host>
+				<Last>LastName1</Last>
+				<License>12344321201234</License>
+				<Miscellaneous>1234567890</Miscellaneous>
+				<Status>Received</Status>
+			</Report>
+		</Reports>
+	</Summary>
+<MVR2000>
+
+	<Order>
+		<ControlNumber>12NYN3</ControlNumber>
+		<Date>
+			<Year>2000</Year>
+			<Month>10</Month>
+			<Day>21</Day>
+		</Date>
+		<Time>
+			<Hour>16</Hour>
+			<Minute>01</Minute>
+		</Time>
+		<DOB>
+			<Year>1980</Year>
+			<Month>8</Month>
+			<Day>1</Day>
+		</DOB>
+		<Type>1 = MVR</Type>
+		<Handling>OL</Handling>
+		<Misc>389868</Misc>
+		<State>
+			<Abbrev>WI</Abbrev>
+			<Full>WISCONSIN</Full>
+		</State>
+		<License>TESTL516089712345</License>
+		<LastName>TEST_LNAME</LastName>
+		<FirstName>TEST_FNAME</FirstName>
+		<Account>S1234</Account>
+		<InputMethod>CI</InputMethod>
+		<OutputMethod>CO</OutputMethod>
+		<Purpose>AA</Purpose>
+		<Subtype>3Y</Subtype>
+		<ProductID>DL</ProductID>
+		<Tracking>000000</Tracking>
+		<Identifer>12NYN3</Identifer>
+		<AuxMisc>126375</AuxMisc>
+	</Order>
+	<Return>
+		<Valid>Y</Valid>
+		<Date>
+			<Year>2013</Year>
+			<Month>10</Month>
+			<Day>2</Day>
+		</Date>
+		<Time>
+			<Hour>16</Hour>
+			<Minute>01</Minute>
+		</Time>
+		<Clear>N</Clear>
+		<OriginalType>RAW</OriginalType>
+		<WarningMessageList>
+			<WarningMessageItem>
+				<Line>CONFIDENTIAL INFORMATION - TO BE USED AS PER STATE AND FEDERAL LAWS.</Line>
+				<Line>MISUSE MAY RESULT IN A CRIMINAL PROSECUTION</Line>
+			</WarningMessageItem>
+		</WarningMessageList>
+	</Return>
+	<Driver>
+		<Name>
+			<First>TEST_FNAME</First>
+			<Middle>MNAME</Middle>
+			<Last>TEST_LNAME</Last>
+			<FullName>TEST_LNAME, TEST_FNAME MNAME</FullName>
+			<FMLName>TEST_FNAME MNAME TEST_LNAME</FMLName>
+		</Name>
+		<License>TESTL516089712345</License>
+	</Driver>
+	<License>
+		<Type>PERSONAL</Type>
+		<Class>OPERATOR</Class>
+		<ExpireDate>
+			<Year>2014</Year>
+			<Month>8</Month>
+			<Day>1</Day>
+		</ExpireDate>
+		<IssueDate>
+			<Year>2010</Year>
+			<Month>9</Month>
+			<Day>15</Day>
+		</IssueDate>
+		<Statuses>
+			<Status>VALID</Status>
+			<StatusExplan>DRIVING STATUS: INELIGIBLE</StatusExplan>
+		</Statuses>
+		<Restrictions>
+			<Restriction>CORRECTIVE LENSES</Restriction>
+		</Restrictions>
+	</License>
+	<Misc>
+		<Miscellaneous>DIGITAL IMAGE ON FILE</Miscellaneous>
+		<Miscellaneous>04/20/2010 REFERRED TO DRIVER ASSESSMENT AND APPEAL DIVISION</Miscellaneous>
+		<Miscellaneous>09/27/2010 REST LICENSE ISSUED, FROM ACTIVITY OF 11/07/2004</Miscellaneous>
+		<MultiLineMisc>
+			<Miscellaneous>TERMINATED DRIVER RESPONSIBILITY FEE SUSPENSION 04/07/2008</Miscellaneous>
+			<Miscellaneous>ASSESSMENT: 12345 . LICENSE NOT VALID UNTIL REINSTATEMENT FEE PAID, FROM ACTIVITY</Miscellaneous>
+			<Miscellaneous>OF 07/11/2007</Miscellaneous>
+		</MultiLineMisc>
+		<MultiLineMisc>
+			<Miscellaneous>TERMINATED DRIVER RESPONSIBILITY FEE SUSPENSION 06/13/2008</Miscellaneous>
+			<Miscellaneous>ASSESSMENT: 23456 . LICENSE NOT VALID UNTIL REINSTATEMENT FEE PAID, FROM ACTIVITY</Miscellaneous>
+			<Miscellaneous>OF 03/27/2006</Miscellaneous>
+		</MultiLineMisc>
+		<MultiLineMisc>
+			<Miscellaneous>TERMINATED DRIVER RESPONSIBILITY FEE SUSPENSION 10/13/2008</Miscellaneous>
+			<Miscellaneous>ASSESSMENT: 34567 . LICENSE NOT VALID UNTIL REINSTATEMENT FEE PAID, FROM ACTIVITY</Miscellaneous>
+			<Miscellaneous>OF 03/27/2006</Miscellaneous>
+		</MultiLineMisc>
+	</Misc>
+	<Additional>
+		<Message>
+			<Line>DIGITAL IMAGE ON FILE</Line>
+		</Message>
+		<Message>
+			<Line>04/20/2010 REFERRED TO DRIVER ASSESSMENT AND APPEAL DIVISION</Line>
+		</Message>
+		<Message>
+			<Line>09/27/2010 REST LICENSE ISSUED, FROM ACTIVITY OF 11/07/2004</Line>
+		</Message>
+		<Message>
+			<Line>TERMINATED DRIVER RESPONSIBILITY FEE SUSPENSION 04/07/2008</Line>
+			<Line>ASSESSMENT: M611913 . LICENSE NOT VALID UNTIL REINSTATEMENT FEE PAID, FROM ACTIVITY</Line>
+			<Line>OF 07/11/2007</Line>
+		</Message>
+		<Message>
+			<Line>TERMINATED DRIVER RESPONSIBILITY FEE SUSPENSION 06/13/2008</Line>
+			<Line>ASSESSMENT: N556336 . LICENSE NOT VALID UNTIL REINSTATEMENT FEE PAID, FROM ACTIVITY</Line>
+			<Line>OF 03/27/2006</Line>
+		</Message>
+		<Message>
+			<Line>TERMINATED DRIVER RESPONSIBILITY FEE SUSPENSION 10/13/2008</Line>
+			<Line>ASSESSMENT: N556337 . LICENSE NOT VALID UNTIL REINSTATEMENT FEE PAID, FROM ACTIVITY</Line>
+			<Line>OF 03/27/2006</Line>
+		</Message>
+	</Additional>
+	<History>
+		<Viol>
+			<Type>VIOL</Type>
+			<Mnemonic>VIOL</Mnemonic>
+			<IncidentDate>
+				<Year>1997</Year>
+				<Month>9</Month>
+				<Day>7</Day>
+			</IncidentDate>
+			<ConvictionDate>
+				<Year>1998</Year>
+				<Month>2</Month>
+				<Day>25</Day>
+			</ConvictionDate>
+			<State>
+				<Abbrev>WI</Abbrev>
+				<Full>WISCONSIN</Full>
+			</State>
+			<Location>MONROE</Location>
+			<Incident>
+				<DescSmall>UNDER AGE PURCH/CONSUM/POSSESS LIQR</DescSmall>
+				<StateDesc>PERSON UNDER 21 PURCHASE /CONSUME /POSSESS LIQUOR</StateDesc>
+				<DescLarge>UNDER AGE PURCHASE/CONSUME/POSSESS LIQUOR</DescLarge>
+				<ADRPoints>-</ADRPoints>
+				<ACDCode>A20</ACDCode>
+				<AVDCode>CA03</AVDCode>
+				<Key>MIA01PERSON UNDER 21 PURCHASE /CONSUME /POSSESS LIQUOR</Key>
+			</Incident>
+		</Viol>
+		<Viol>
+			<Type>VIOL</Type>
+			<Mnemonic>VIOL</Mnemonic>
+			<IncidentDate>
+				<Year>1998</Year>
+				<Month>2</Month>
+				<Day>15</Day>
+			</IncidentDate>
+			<ConvictionDate>
+				<Year>1998</Year>
+				<Month>3</Month>
+				<Day>19</Day>
+			</ConvictionDate>
+			<State>
+				<Abbrev>WI</Abbrev>
+				<Full>WISCONSIN</Full>
+			</State>
+			<Location>MONROE</Location>
+			<Incident>
+				<DescSmall>OWI BY LIQUOR</DescSmall>
+				<StateDesc>OWI BY LIQUOR</StateDesc>
+				<DescLarge>OWI BY LIQUOR</DescLarge>
+				<ADRPoints>-</ADRPoints>
+				<ACDCode>A20</ACDCode>
+				<AVDCode>CA04</AVDCode>
+				<Key>MIA01OWI BY LIQUOR</Key>
+			</Incident>
+		</Viol>
+		<Viol>
+			<Type>VIOL</Type>
+			<Mnemonic>VIOL</Mnemonic>
+			<IncidentDate>
+				<Year>2001</Year>
+				<Month>6</Month>
+				<Day>9</Day>
+			</IncidentDate>
+			<ConvictionDate>
+				<Year>2001</Year>
+				<Month>10</Month>
+				<Day>17</Day>
+			</ConvictionDate>
+			<State>
+				<Abbrev>WI</Abbrev>
+				<Full>WISCONSIN</Full>
+			</State>
+			<Location>MONROE</Location>
+			<Incident>
+				<DescSmall>UNLAWFUL ALCOHOL CONTENT (.10)</DescSmall>
+				<StateDesc>UNLAWFUL BODILY ALCOHOL CONTENT (.10)</StateDesc>
+				<DescLarge>UNLAWFUL BODILY ALCOHOL CONTENT (.10)</DescLarge>
+				<ADRPoints>-</ADRPoints>
+				<ACDCode>A10</ACDCode>
+				<AVDCode>CB04</AVDCode>
+				<Key>MIA01UNLAWFUL BODILY ALCOHOL CONTENT (.10)</Key>
+			</Incident>
+		</Viol>
+		<Viol>
+			<Type>VIOL</Type>
+			<Mnemonic>VIOL</Mnemonic>
+			<IncidentDate>
+				<Year>2004</Year>
+				<Month>7</Month>
+				<Day>31</Day>
+			</IncidentDate>
+			<ConvictionDate>
+				<Year>2004</Year>
+				<Month>10</Month>
+				<Day>7</Day>
+			</ConvictionDate>
+			<State>
+				<Abbrev>WI</Abbrev>
+				<Full>WISCONSIN</Full>
+			</State>
+			<Location>MONROE</Location>
+			<Incident>
+				<DescSmall>OPERATING WHILE INTOXICATED</DescSmall>
+				<StateDesc>OPERATING WHILE INTOXICATED</StateDesc>
+				<DescLarge>OPERATING WHILE INTOXICATED</DescLarge>
+				<ADRPoints>-</ADRPoints>
+				<ACDCode>A20</ACDCode>
+				<AVDCode>CA04</AVDCode>
+				<Key>WIA01OPERATING WHILE INTOXICATED</Key>
+			</Incident>
+			<Additional>07/01/2010 DRIVER IMPROVEMENT AND APPEAL DIVISION HEARING 07/01/2010, ACTION OF 11/07/2004 AMENDED</Additional>
+		</Viol>
+		<Action>
+			<Type>ACTION</Type>
+			<Mnemonic>SUSPENSION</Mnemonic>
+			<State>
+				<Abbrev>WI</Abbrev>
+				<Full>WISCONSIN</Full>
+			</State>
+			<Incident>
+				<DescSmall>SUSPENSION</DescSmall>
+				<StateDesc>SUSPENSION</StateDesc>
+				<DescLarge>SUSPENSION</DescLarge>
+				<ACDCode>W00</ACDCode>
+				<AVDCode>DB31</AVDCode>
+				<Key>WIA01SUSPENSION</Key>
+			</Incident>
+			<Additional>TO COURT SUSP FROM 03/19/2000 THRU MIDNIGHT OF 03/18/2001. LICENSE NOT VALID</Additional>
+			<Additional>UNTIL REINSTATEMENT FEE PAID, FROM VIOLATION OF 12/14/1998</Additional>
+			<OffenseDate>
+				<Year>1998</Year>
+				<Month>12</Month>
+				<Day>14</Day>
+			</OffenseDate>
+			<SuspFlag>Y</SuspFlag>
+		</Action>
+	</History>
+
+	</MVR2000>
+</ADR>

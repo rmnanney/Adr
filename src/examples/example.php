@@ -6,7 +6,7 @@
  * Time: 1:34 PM
  */
 
-require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/../../vendor/autoload.php';
 
 use Adr\Request;
 use Adr\Request\Order;
@@ -56,7 +56,10 @@ $response = $request->send($CURLResource);
 
 //We aren't actually going to communicate with ADR, so we have to fake this out by calling response::loadXML below...
 $response = new Response();
-$response->loadXML(file_get_contents(__DIR__ . '/mvr1.xml'));
+//$response->loadXML(file_get_contents(__DIR__ . '/response.standard.xml'));
+$response->loadXML(file_get_contents(__DIR__ . '/response.preferred.xml'));
+//$response->loadXML(file_get_contents(__DIR__ . '/response.decline.xml'));
+//$response->loadXML(file_get_contents(__DIR__ . '/response.refer.xml'));
 $response->parse();
 
 //If you want to have your response persist to the filesystem
@@ -91,6 +94,7 @@ if(count($historyNodes)){
                 $q = "SELECT * FROM `MVR_AVDCodes` WHERE `productID` = 1 AND `avdcode`='" . $avdCode . "'";
                 $res = $db->query($q);
                 while($row = $res->fetch_assoc()){
+//                    print_r($row);
                     $ruleSetID = $row['ruleSetID'];
                     $rulesHits[$ruleSetID][] = array(
                         'avdcode' => $avdCode,
@@ -105,7 +109,7 @@ if(count($historyNodes)){
 
     //We have found AVD Codes we need to lookup
     if(count($rulesHits)){
-
+        print_r($rulesHits);
         //Rules are classified into buckets, known as RuleSets
         foreach($rulesHits as $ruleSetID => $hits){
             $numHits = count($rulesHits[$ruleSetID]);
@@ -117,7 +121,7 @@ if(count($historyNodes)){
                 }
             }
 
-            echo "Found $numHits incidents on RuleSet #4.  Most recently $timeSince seconds ago." . PHP_EOL;
+            echo "Found $numHits incidents on RuleSet #$ruleSetID.  Most recently $timeSince seconds ago." . PHP_EOL;
 
             $q = "SELECT * FROM MVR_Rules ".
                 "WHERE ruleSetID = $ruleSetID ".
@@ -127,6 +131,7 @@ if(count($historyNodes)){
                 "LIMIT 1";
             $result = $db->query($q);
             if($row = $result->fetch_assoc()){
+                print_r($row);
                 if(!empty($row['decision'])){
                     $decisions[] = $row['decision'];
                 }else{

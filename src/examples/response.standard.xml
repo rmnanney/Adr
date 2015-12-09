@@ -13,7 +13,7 @@
             <Order>
                 <Host>OL</Host>
                 <Last>LastName1</Last>
-                <License>R250-7808-1234-00</License>
+                <License>1234-4321-1234-00</License>
                 <Miscellaneous>1234567890</Miscellaneous>
                 <Status>Success</Status>
             </Order>
@@ -22,7 +22,7 @@
             <Report>
                 <Host>OL</Host>
                 <Last>LastName1</Last>
-                <License>R2507808201234</License>
+                <License>12344321201234</License>
                 <Miscellaneous>1234567890</Miscellaneous>
                 <Status>Received</Status>
             </Report>

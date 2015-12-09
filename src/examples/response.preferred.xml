@@ -1,0 +1,231 @@
+<ADR>
+    <Summary>
+        <Online>
+            <Error>0</Error>
+            <ErrorDescription>no error</ErrorDescription>
+            <Result>1</Result>
+            <ResultDescription>successful</ResultDescription>
+            <Message>Login was Successful</Message>
+            <DaysLeft>60</DaysLeft>
+            <ShowWarning>N</ShowWarning>
+        </Online>
+        <Orders>
+            <Order>
+                <Host>OL</Host>
+                <Last>LastName1</Last>
+                <License>1234-4321-1234-00</License>
+                <Miscellaneous>1234567890</Miscellaneous>
+                <Status>Success</Status>
+            </Order>
+        </Orders>
+        <Reports>
+            <Report>
+                <Host>OL</Host>
+                <Last>LastName1</Last>
+                <License>12344321201234</License>
+                <Miscellaneous>1234567890</Miscellaneous>
+                <Status>Received</Status>
+            </Report>
+        </Reports>
+    </Summary>
+    <MVR2000>
+
+        <Order>
+            <ControlNumber>2TPRN12345</ControlNumber>
+            <Date>
+                <Year>2012</Year>
+                <Month>12</Month>
+                <Day>28</Day>
+            </Date>
+            <Time>
+                <Hour>11</Hour>
+                <Minute>37</Minute>
+            </Time>
+            <DOB>
+                <Year>1982</Year>
+                <Month>2</Month>
+                <Day>12</Day>
+            </DOB>
+            <Type>1 = MVR</Type>
+            <Handling>OL</Handling>
+            <Misc>1234567890</Misc>
+            <State>
+                <Abbrev>WI</Abbrev>
+                <Full>WISCONSIN</Full>
+            </State>
+            <License>R2507808201234</License>
+            <LastName>LastName1</LastName>
+            <FirstName>FirstName1</FirstName>
+            <Account>S12345</Account>
+            <InputMethod>CI</InputMethod>
+            <OutputMethod>CO</OutputMethod>
+            <Purpose>AA</Purpose>
+            <Subtype>5Y</Subtype>
+            <ProductID>DL</ProductID>
+            <Tracking>000000</Tracking>
+            <Identifer>2TPRN12345</Identifer>
+            <AuxMisc>123456</AuxMisc>
+        </Order>
+        <Return>
+            <Valid>Y</Valid>
+            <Date>
+                <Year>2012</Year>
+                <Month>12</Month>
+                <Day>28</Day>
+            </Date>
+            <Time>
+                <Hour>11</Hour>
+                <Minute>37</Minute>
+            </Time>
+            <Clear>N</Clear>
+            <OriginalType>RAW</OriginalType>
+            <WarningMessageList>
+                <WarningMessageItem>
+                    <Line>CONFIDENTIAL INFORMATION - TO BE USED AS PER STATE AND FEDERAL LAWS.</Line>
+                    <Line>MISUSE MAY RESULT IN A CRIMINAL PROSECUTION</Line>
+                </WarningMessageItem>
+            </WarningMessageList>
+        </Return>
+        <Driver>
+            <Name>
+                <First>FirstName1</First>
+                <Last>LastName1</Last>
+                <FullName>LastName1, FirstName1</FullName>
+                <FMLName>FirstName1 LastName1</FMLName>
+            </Name>
+            <License>R2507808201234</License>
+        </Driver>
+        <License>
+            <Type>PERSONAL</Type>
+            <IssueType>REINSTATEMENT</IssueType>
+            <Class>OPERATOR</Class>
+            <ClassCode>D</ClassCode>
+            <ExpireDate>
+                <Year>2027</Year>
+                <Month>1</Month>
+                <Day>12</Day>
+            </ExpireDate>
+            <IssueDate>
+                <Year>2001</Year>
+                <Month>1</Month>
+                <Day>28</Day>
+            </IssueDate>
+            <Statuses>
+                <Status>SUSPENDED</Status>
+            </Statuses>
+            <Restrictions>
+                <Restriction>CORRECTIVE LENSES</Restriction>
+            </Restrictions>
+        </License>
+        <License>
+            <Type>PERMIT</Type>
+            <IssueType>RENEWAL</IssueType>
+            <Class>OPERATOR</Class>
+            <ClassCode>D</ClassCode>
+            <ExpireDate>
+                <Year>1999</Year>
+                <Month>1</Month>
+                <Day>29</Day>
+            </ExpireDate>
+            <IssueDate>
+                <Year>1998</Year>
+                <Month>7</Month>
+                <Day>29</Day>
+            </IssueDate>
+            <Statuses>
+                <Status>SUSPENDED</Status>
+            </Statuses>
+            <Restrictions>
+                <Restriction>CORRECTIVE LENSES</Restriction>
+            </Restrictions>
+        </License>
+        <Misc>
+            <Miscellaneous>ADDRESS UPDATED DATE: 03/28/2006</Miscellaneous>
+        </Misc>
+        <Additional>
+            <Message>
+                <Line>ADDRESS UPDATED DATE: 03/28/2006</Line>
+            </Message>
+        </Additional>
+        <History>
+            <Viol>
+                <Type>VIOL</Type>
+                <Mnemonic>VIOL</Mnemonic>
+                <IncidentDate>
+                    <Year>2004</Year>
+                    <Month>11</Month>
+                    <Day>23</Day>
+                </IncidentDate>
+                <ConvictionDate>
+                    <Year>2006</Year>
+                    <Month>6</Month>
+                    <Day>9</Day>
+                </ConvictionDate>
+                <State>
+                    <Abbrev>WI</Abbrev>
+                    <Full>WISCONSIN</Full>
+                </State>
+                <Location>COOK</Location>
+                <LocationCode>10001</LocationCode>
+                <Incident>
+                    <DescSmall>LV SC OF ACCIDENT DEATH/P/INJURY</DescSmall>
+                    <StateCode>040100</StateCode>
+                    <StateDesc>LV SC OF ACCIDENT DEATH/P/IN</StateDesc>
+                    <DescLarge>LEAVE SCENE OF ACCIDENT DEATH/PERSONAL INJURY</DescLarge>
+                    <ADRPoints>-</ADRPoints>
+                    <ACDCode>B07</ACDCode>
+                    <AVDCode>AC02</AVDCode>
+                    <Key>asdfasdf</Key>
+                </Incident>
+                <Docket>3060627</Docket>
+            </Viol>
+            <Action>
+                <Type>ACTION</Type>
+                <Mnemonic>REVOCATION</Mnemonic>
+                <IncidentDate>
+                    <Year>2003</Year>
+                    <Month>1</Month>
+                    <Day>01</Day>
+                </IncidentDate>
+                <State>
+                    <Abbrev>WI</Abbrev>
+                    <Full>WISCONSIN</Full>
+                </State>
+                <Incident>
+                    <DescSmall>LV SC OF ACCD-DEATH/PERS INJURY</DescSmall>
+                    <StateCode>205104</StateCode>
+                    <StateDesc>LV SC OF ACCIDENT - DEATH/PERSONAL INJURY</StateDesc>
+                    <DescLarge>LEAVING SCENE OF ACCIDENT - DEATH/PERSONAL INJURY</DescLarge>
+                    <ACDCode>B07</ACDCode>
+                    <AVDCode>AC02</AVDCode>
+                    <Key>asdfasdf</Key>
+                </Incident>
+                <Additional>CONVICTION FOR THE OFFENSE - LEAVING THE SCENE OF A TRAFFIC ACCIDENT INVOLVING PERSONAL I</Additional>
+                <SuspFlag>N</SuspFlag>
+            </Action>
+            <Action>
+                <Type>ACTION</Type>
+                <Mnemonic>SUSPENSION</Mnemonic>
+                <IncidentDate>
+                    <Year>2006</Year>
+                    <Month>6</Month>
+                    <Day>23</Day>
+                </IncidentDate>
+                <State>
+                    <Abbrev>WI</Abbrev>
+                    <Full>WISCONSIN</Full>
+                </State>
+                <Incident>
+                    <DescSmall>ACCIDENT SUSPENSION</DescSmall>
+                    <StateDesc>ACCIDENT SUSPENSION</StateDesc>
+                    <DescLarge>ACCIDENT SUSPENSION</DescLarge>
+                    <ACDCode>W00</ACDCode>
+                    <AVDCode>UH06</AVDCode>
+                    <Key>ILA01ACCIDENT SUSPENSION</Key>
+                </Incident>
+                <SuspFlag>Y</SuspFlag>
+            </Action>
+        </History>
+
+    </MVR2000>
+</ADR>
