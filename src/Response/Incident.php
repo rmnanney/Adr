@@ -6,8 +6,7 @@
  * Time: 10:07 AM
  */
 
-namespace Adr;
-
+namespace Adr\Response;
 
 class Incident {
 

@@ -11,7 +11,6 @@ namespace Adr\Response;
 use Adr\Response\Date\IncidentDate;
 use Adr\Response\Date\ConvictionDate;
 use Adr\State;
-use Adr\Incident;
 
 class Violation {
 

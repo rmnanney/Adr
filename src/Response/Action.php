@@ -13,7 +13,6 @@ use Adr\Response\Date\MailDate;
 use Adr\Response\Date\ClearDate;
 use Adr\Response\Date\ActionEndDate;
 use Adr\State;
-use Adr\Incident;
 
 class Action {
 

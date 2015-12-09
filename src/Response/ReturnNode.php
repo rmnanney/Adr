@@ -10,7 +10,6 @@ namespace Adr\Response;
 
 use Adr\Date;
 use Adr\Time;
-use Adr\WarningMessageList;
 
 class ReturnNode {
 
