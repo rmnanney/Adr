@@ -8,8 +8,7 @@
 
 namespace Adr\tests;
 
-//need to use an autoloader
-require_once '../src/Response.php';
+require_once __DIR__ . '/../vendor/autoload.php';
 
 use Adr\Response;
 
@@ -80,7 +79,7 @@ elseif(in_array('REFER', $decisions))
     echo "return 'Decision::REFER HOME OFFICE'" . PHP_EOL;
 elseif(2 == $pointTotal)
     echo "return 'Decision::STANDARD" . PHP_EOL;
-elseif(1 == $pointTotal)
+elseif(1 == $pointTotal || 0 == $pointTotal)
     echo "return 'Decision::PREFERRED'" . PHP_EOL;
 else
     echo "Help me houston." . PHP_EOL;

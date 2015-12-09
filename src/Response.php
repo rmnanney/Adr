@@ -8,15 +8,6 @@
 
 namespace Adr;
 
-//Need to use an autoloader here
-require_once 'Response/AdditionalNode.php';
-require_once 'Response/DriverNode.php';
-require_once 'Response/HistoryNode.php';
-require_once 'Response/LicenseNode.php';
-require_once 'Response/MiscNode.php';
-require_once 'Response/OrderNode.php';
-require_once 'Response/ReturnNode.php';
-
 use Adr\Response\AdditionalNode;
 use Adr\Response\DriverNode;
 use Adr\Response\HistoryNode;

@@ -8,10 +8,6 @@
 
 namespace Adr\Response;
 
-require_once __DIR__ . '/Violation.php';
-require_once __DIR__ . '/Action.php';
-
-use Adr\Action;
 
 class HistoryNode {
 

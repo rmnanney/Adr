@@ -6,17 +6,14 @@
  * Time: 10:24 AM
  */
 
-namespace Adr;
+namespace Adr\Response;
 
-require_once __DIR__ . '/../Date/IncidentDate.php';
-require_once __DIR__ . '/../Date/ClearDate.php';
-require_once __DIR__ . '/../Date/ActionEndDate.php';
-require_once __DIR__ . '/../Date/MailDate.php';
-
-use Adr\Date\IncidentDate;
-use Adr\Date\MailDate;
-use Adr\Date\ClearDate;
-use Adr\Date\ActionEndDate;
+use Adr\Response\Date\IncidentDate;
+use Adr\Response\Date\MailDate;
+use Adr\Response\Date\ClearDate;
+use Adr\Response\Date\ActionEndDate;
+use Adr\State;
+use Adr\Incident;
 
 class Action {
 

@@ -8,12 +8,6 @@
 
 namespace Adr\Response;
 
-//Use an autoloader
-require_once __DIR__ . '/../Date.php';
-require_once __DIR__ . '/../Time.php';
-require_once __DIR__ . '/../Date/Dob.php';
-require_once __DIR__ . '/../State.php';
-
 use Adr\Date;
 use Adr\Date\Dob;
 use Adr\State;

@@ -8,8 +8,6 @@
 
 namespace Adr\Response;
 
-require_once __DIR__ . '/../Message.php';
-
 class MiscNode {
 
     private $miscellaneous;

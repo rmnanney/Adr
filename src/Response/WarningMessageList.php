@@ -6,10 +6,7 @@
  * Time: 2:19 PM
  */
 
-namespace Adr;
-
-//use an autoloader
-require_once __DIR__ . '/WarningMessageItem.php';
+namespace Adr\Response;
 
 class WarningMessageList{
 

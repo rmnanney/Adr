@@ -1,0 +1,30 @@
+<ADR>
+    <Communications>
+        <Host>Online</Host>
+        <Account>S1234</Account>
+        <UserID>03</UserID>
+        <Password format="encrypted">22225d7bs6e4bfdf71d5d5a1e912345</Password>
+        <NewPassword format="encrypted">22225d7bs6e4bfdf71d5d5a1e912345</NewPassword>
+        <DeviceID format="encoded">
+            0C341E44063418446A304A3615314C30184C8831244C19442B404C473F40512345441C34274928351B4D4B431D4139456C4D5B36644D593490332B405123456
+        </DeviceID>
+        <ReportType>XML</ReportType>
+    </Communications>
+    <Order>
+        <Account>S1234</Account>
+        <Handling>OL</Handling>
+        <ProductID>DL</ProductID>
+        <Subtype>3Y</Subtype>
+        <Purpose>AA</Purpose>
+        <Misc>368616</Misc>
+        <AuxMisc>61162</AuxMisc>
+        <FirstName>Test1</FirstName>
+        <LastName>Test1</LastName>
+        <License>not provided</License>
+        <DOB>
+            <Year>1967</Year>
+            <Month>6</Month>
+            <Day>9</Day>
+        </DOB>
+    </Order>
+</ADR>

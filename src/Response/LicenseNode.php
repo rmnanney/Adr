@@ -9,15 +9,11 @@
 namespace Adr\Response;
 
 
-use Adr\Date\ExpireDate;
-use Adr\Date\IssueDate;
-use Adr\License\Restriction;
-use Adr\License\Status;
+use Adr\Response\Date\ExpireDate;
+use Adr\Response\Date\IssueDate;
+use Adr\Response\License\Restriction;
+use Adr\Response\License\Status;
 
-require_once __DIR__ . '/../Date/ExpireDate.php';
-require_once __DIR__ . '/../Date/IssueDate.php';
-require_once __DIR__ . '/../License/Status.php';
-require_once __DIR__ . '/../License/Restriction.php';
 
 class LicenseNode {
 

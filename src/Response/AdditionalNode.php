@@ -8,9 +8,6 @@
 
 namespace Adr\Response;
 
-require_once __DIR__ . '/../Message.php';
-
-use Adr\Message;
 
 class AdditionalNode {
 

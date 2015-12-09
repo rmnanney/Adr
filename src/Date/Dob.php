@@ -14,8 +14,5 @@ use Adr\Date;
 
 class Dob extends Date {
 
-    public function __construct(\DOMElement $xmlNode){
-        parent::__construct($xmlNode);
-        $this->dateType = self::DATE_TYPE_DOB;
-    }
+    protected $dateType = 2;
 }

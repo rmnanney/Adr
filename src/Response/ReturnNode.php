@@ -8,11 +8,6 @@
 
 namespace Adr\Response;
 
-//Use an autoloader
-require_once __DIR__ . '/../Date.php';
-require_once __DIR__ . '/../Time.php';
-require_once __DIR__ . '/../WarningMessageList.php';
-
 use Adr\Date;
 use Adr\Time;
 use Adr\WarningMessageList;

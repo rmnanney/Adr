@@ -8,13 +8,8 @@
 
 namespace Adr\Response;
 
-require_once __DIR__ . '/../Date/IncidentDate.php';
-require_once __DIR__ . '/../Date/ConvictionDate.php';
-require_once __DIR__ . '/../State.php';
-require_once __DIR__ . '/Incident.php';
-
-use Adr\Date\IncidentDate;
-use Adr\Date\ConvictionDate;
+use Adr\Response\Date\IncidentDate;
+use Adr\Response\Date\ConvictionDate;
 use Adr\State;
 use Adr\Incident;
 

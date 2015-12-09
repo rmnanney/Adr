@@ -3,15 +3,15 @@
  * Created by PhpStorm.
  * User: ryan
  * Date: 12/5/15
- * Time: 2:52 PM
+ * Time: 2:53 PM
  */
 
-namespace Adr\License;
+namespace Adr\Response\License;
 
 
-class Status {
+class Restriction {
 
-    private $status;
+    private $restrition;
 
     public function __construct(\DOMElement $xmlNode){
         foreach($xmlNode->childNodes as $element) {
@@ -24,9 +24,9 @@ class Status {
     /**
      * @return mixed
      */
-    public function getStatus()
+    public function getRestrition()
     {
-        return $this->status;
+        return $this->restrition;
     }
 
 

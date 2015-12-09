@@ -8,8 +8,6 @@
 
 namespace Adr\Response;
 
-require_once __DIR__ . '/../Name.php';
-
 use Adr\Name;
 
 class DriverNode{
