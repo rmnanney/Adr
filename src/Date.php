@@ -11,19 +11,21 @@ namespace Adr;
 
 class Date {
 
-    private $year;
-    private $month;
-    private $day;
+    protected $year;
+    protected $month;
+    protected $day;
     private $epoch;
     protected $dateType;
 
-    public function __construct(\DOMElement $xmlNode){
-        foreach($xmlNode->childNodes as $element) {
-            if (!$element instanceof \DOMText) {
-                $this->{strtolower($element->nodeName)} = $element->nodeValue;
+    public function __construct(\DOMElement $xmlNode = null){
+        if(null != $xmlNode){
+            foreach($xmlNode->childNodes as $element) {
+                if (!$element instanceof \DOMText) {
+                    $this->{strtolower($element->nodeName)} = $element->nodeValue;
+                }
             }
+            $this->epoch = strtotime($this->year . '-' . $this->month . '-' . $this->day);
         }
-        $this->epoch = strtotime($this->year . '-' . $this->month . '-' . $this->day);
     }
 
     public function getDateType(){

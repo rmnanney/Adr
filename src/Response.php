@@ -46,6 +46,11 @@ class Response extends \DOMDocument {
         $this->historyNodes = array();
     }
 
+    public function getXML(){
+        $this->formatOutput = true;
+        return parent::saveXML();
+    }
+
     public function parse(){
         $xpath = new DOMXPath($this);
         $result = $xpath->query(self::XPATH_ORDER);
