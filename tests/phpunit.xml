@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit bootstrap="setup.php" colors="true" verbose="true" convertErrorsToExceptions="true">
+    <testsuites>
+        <testsuite name="adr-tests">
+            <directory>.</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>
