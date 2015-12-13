@@ -6,7 +6,7 @@
 ```
 {
     "require" : {
-        "rmnanney/adr": "0.07"
+        "rmnanney/adr": "dev-master"
     }
 }
 ```
