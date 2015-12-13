@@ -6,15 +6,9 @@
 ```
 {
     "require" : {
-        "rmnanney/adr": "0.06"
+        "rmnanney/adr": "0.07"
     }
 }
-```
-
-
-### Install with Composer
-```
-$ composer install rmnanney/adr
 ```
 
 **Please see the [example](src/examples/example.php) for a quick use-case.  Additional examples and proper documentation is on the to-do list.**
