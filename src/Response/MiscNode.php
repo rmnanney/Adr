@@ -8,13 +8,15 @@
 
 namespace Adr\Response;
 
-class MiscNode {
+class MiscNode
+{
 
     private $miscellaneous;
 
-    public function __construct($xmlNode){
+    public function __construct($xmlNode)
+    {
         $this->miscellaneous = array();
-        foreach($xmlNode->childNodes as $element) {
+        foreach ($xmlNode->childNodes as $element) {
             if (!$element instanceof \DOMText) {
                 $this->{strtolower($element->nodeName)}[] = $element->nodeValue;
             }
@@ -28,7 +30,4 @@ class MiscNode {
     {
         return $this->miscellaneous;
     }
-
-
-
 }

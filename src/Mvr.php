@@ -8,17 +8,19 @@
 
 namespace Adr;
 
-
-class Mvr{
+class Mvr
+{
     private $request;
     private $response;
 
-    function __construct(){
+    public function __construct()
+    {
         $this->request = new Request();
         $this->response = new Response();
     }
 
-    public function send(){
+    public function send()
+    {
         //send over curl or w/e
         $xmlResponse = $this->request->send();
 
@@ -41,7 +43,4 @@ class Mvr{
     {
         return $this->response;
     }
-
-
-
 }

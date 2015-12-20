@@ -10,7 +10,7 @@ namespace Adr\Response\Date;
 
 use Adr\Date;
 
-class IssueDate extends Date {
-
+class IssueDate extends Date
+{
     protected $dateType = 4;
 }

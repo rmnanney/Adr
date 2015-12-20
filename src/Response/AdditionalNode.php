@@ -8,15 +8,16 @@
 
 namespace Adr\Response;
 
-
-class AdditionalNode {
+class AdditionalNode
+{
 
     private $message;
 
-    public function __construct($xmlNode){
+    public function __construct($xmlNode)
+    {
         $this->message = array();
-        foreach($xmlNode->childNodes as $element){
-            if(!$element instanceof \DOMText) {
+        foreach ($xmlNode->childNodes as $element) {
+            if (!$element instanceof \DOMText) {
                 switch (strtoupper($element->nodeName)) {
                     case 'MESSAGE':
                         $this->{strtolower($element->nodeName)}[] = new Message($element);

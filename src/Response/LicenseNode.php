@@ -8,14 +8,13 @@
 
 namespace Adr\Response;
 
-
 use Adr\Response\Date\ExpireDate;
 use Adr\Response\Date\IssueDate;
 use Adr\Response\License\Restriction;
 use Adr\Response\License\Status;
 
-
-class LicenseNode {
+class LicenseNode
+{
 
     private $type;
     private $issuetype;
@@ -26,11 +25,12 @@ class LicenseNode {
     private $statuses;
     private $restrictions;
 
-    public function __construct($xmlNode){
+    public function __construct($xmlNode)
+    {
         $this->statuses = array();
         $this->restrictions = array();
-        foreach($xmlNode->childNodes as $element){
-            if(!$element instanceof \DOMText) {
+        foreach ($xmlNode->childNodes as $element) {
+            if (!$element instanceof \DOMText) {
                 switch (strtoupper($element->nodeName)) {
                     case 'STATUSES':
                         $this->{strtolower($element->nodeName)}[] = new Status($element);
@@ -115,7 +115,4 @@ class LicenseNode {
     {
         return $this->restrictions;
     }
-
-
-
 }

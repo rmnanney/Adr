@@ -10,7 +10,8 @@ namespace Adr\Response\Date;
 
 use Adr\Date;
 
-class ExpireDate extends Date {
+class ExpireDate extends Date
+{
 
     protected $dateType = 3;
 }

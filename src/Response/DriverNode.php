@@ -10,14 +10,16 @@ namespace Adr\Response;
 
 use Adr\Name;
 
-class DriverNode{
+class DriverNode
+{
 
     private $license;
     private $name;
 
-    public function __construct(\DOMElement $xmlNode){
-        foreach($xmlNode->childNodes as $element){
-            if(!$element instanceof \DOMText) {
+    public function __construct(\DOMElement $xmlNode)
+    {
+        foreach ($xmlNode->childNodes as $element) {
+            if (!$element instanceof \DOMText) {
                 switch (strtoupper($element->nodeName)) {
                     case 'NAME':
                         $this->{strtolower($element->nodeName)} = new Name($element);
@@ -45,7 +47,4 @@ class DriverNode{
     {
         return $this->name;
     }
-
-    
-
 }

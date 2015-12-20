@@ -10,8 +10,7 @@ namespace Adr\Response\Date;
 
 use Adr\Date;
 
-class MailDate extends Date {
-
+class MailDate extends Date
+{
     protected $dateType = 9;
-
 }

@@ -13,16 +13,17 @@ use Adr\Request\Order;
 use Adr\Date\Dob;
 use Adr\Response;
 
-print PHP_EOL.PHP_EOL . "Starting a new ADR Query:" . PHP_EOL;
+print PHP_EOL . PHP_EOL . "Starting a new ADR Query:" . PHP_EOL;
 
 //Just a quick rig to get this thing running ASAP.
 $config = parse_ini_file(__DIR__ . '/dbconfig.ini');
 
-$db = new \mysqli($config['hostname'],$config['username'],$config['password'],$config['dbname']);
+$db = new \mysqli($config['hostname'], $config['username'], $config['password'], $config['dbname']);
 
 //Setup the request to be send to ADR (American Driving Records) WebMVR.
 $requestOrder = new Order();  //NOTE: This is a Request\Order, NOT a Response\Order;  they are different!
-//NOTE!! ADR Caveat: If the number of the year is specified in a two digit format, the values between 00-69 are mapped to 2000-2069 and 70-99 to 1970-1999.
+//NOTE!! ADR Caveat: If the number of the year is specified in a two digit format, the values between 00-69
+// are mapped to 2000-2069 and 70-99 to 1970-1999.
 $dob = new Dob();
 $dob->setYear(2000);
 $dob->setMonth(01);
@@ -66,10 +67,9 @@ $response->parse();
 //$response->save('./mvr2.xml');
 
 
-print PHP_EOL.PHP_EOL . "Simulated response from ADR:" . PHP_EOL;
+print PHP_EOL . PHP_EOL . "Simulated response from ADR:" . PHP_EOL;
 print $response->getXML();
-print PHP_EOL.PHP_EOL . "Begin custom processing of response XML:" . PHP_EOL;
-
+print PHP_EOL . PHP_EOL . "Begin custom processing of response XML:" . PHP_EOL;
 
 
 $historyNodes = $response->getHistoryNodes();
@@ -78,22 +78,22 @@ $pointTotal = 0;
 $decisions = array();
 $rulesHits = array();
 
-if(count($historyNodes)){
+if (count($historyNodes)) {
 
     /** @var \Adr\Response\HistoryNode $history */
-    foreach($historyNodes as $history){
+    foreach ($historyNodes as $history) {
 
-        if($history->hasViolations()){
+        if ($history->hasViolations()) {
             $violations = $history->getViolations();
 
             /** @var \Adr\Response\Violation $violation */
-            foreach($violations as $violation){
+            foreach ($violations as $violation) {
                 $avdCode = $violation->getIncident()->getAvdcode();
                 $timeSince = $violation->getTimeSinceIncident();
 
                 $q = "SELECT * FROM `MVR_AVDCodes` WHERE `productID` = 1 AND `avdcode`='" . $avdCode . "'";
                 $res = $db->query($q);
-                while($row = $res->fetch_assoc()){
+                while ($row = $res->fetch_assoc()) {
 //                    print_r($row);
                     $ruleSetID = $row['ruleSetID'];
                     $rulesHits[$ruleSetID][] = array(
@@ -102,41 +102,42 @@ if(count($historyNodes)){
                     );
                 }
             }
-        }else{
+        } else {
             echo "No violations found.";
         }
     }
 
     //We have found AVD Codes we need to lookup
-    if(count($rulesHits)){
+    if (count($rulesHits)) {
         print_r($rulesHits);
         //Rules are classified into buckets, known as RuleSets
-        foreach($rulesHits as $ruleSetID => $hits){
+        foreach ($rulesHits as $ruleSetID => $hits) {
             $numHits = count($rulesHits[$ruleSetID]);
             $timeSince = $hits[0]['timesince'];
-            if(1 < $numHits){
+            if (1 < $numHits) {
                 //Ensure we find the most recent incident for this RuleSet
-                for($i = 1; $i < $numHits; $i++){
-                    $timeSince = ($hits[$i] < $timeSince)?$hits[$i]:$timeSince;
+                for ($i = 1; $i < $numHits; $i++) {
+                    $timeSince = ($hits[$i] < $timeSince) ? $hits[$i] : $timeSince;
                 }
             }
 
             echo "Found $numHits incidents on RuleSet #$ruleSetID.  Most recently $timeSince seconds ago." . PHP_EOL;
 
-            $q = "SELECT * FROM MVR_Rules ".
-                "WHERE ruleSetID = $ruleSetID ".
-                "AND minOccurrences <= $numHits ".
-                "AND riskBoundary >= $timeSince ".
-                "ORDER BY minOccurrences DESC, riskBoundary ASC ".
+            $q = "SELECT * FROM MVR_Rules " .
+                "WHERE ruleSetID = $ruleSetID " .
+                "AND minOccurrences <= $numHits " .
+                "AND riskBoundary >= $timeSince " .
+                "ORDER BY minOccurrences DESC, riskBoundary ASC " .
                 "LIMIT 1";
             $result = $db->query($q);
-            if($row = $result->fetch_assoc()){
+            if ($row = $result->fetch_assoc()) {
                 print_r($row);
-                if(!empty($row['decision'])){
+                if (!empty($row['decision'])) {
                     $decisions[] = $row['decision'];
-                }else{
+                } else {
                     $pointTotal += $row['points'];
-                    echo $row['points'] . " points associated to this violation (Rule ID: " . $row['ruleID'] . ")." . PHP_EOL;
+                    echo $row['points'] . " points associated to this violation (Rule ID: "
+                        . $row['ruleID'] . ")." . PHP_EOL;
                 }
             }
         }
@@ -146,13 +147,14 @@ if(count($historyNodes)){
 echo "Total points: $pointTotal" . PHP_EOL;
 echo "Decisions found: " . var_export($decisions, true) . PHP_EOL;
 
-if(3 <= $pointTotal)
+if (3 <= $pointTotal) {
     echo "return 'Decision::DECLINE'" . PHP_EOL;
-elseif(in_array('REFER', $decisions))
+} elseif (in_array('REFER', $decisions)) {
     echo "return 'Decision::REFER HOME OFFICE'" . PHP_EOL;
-elseif(2 == $pointTotal)
+} elseif (2 == $pointTotal) {
     echo "return 'Decision::STANDARD" . PHP_EOL;
-elseif(1 == $pointTotal || 0 == $pointTotal)
+} elseif (1 == $pointTotal || 0 == $pointTotal) {
     echo "return 'Decision::PREFERRED'" . PHP_EOL;
-else
+} else {
     echo "Help me houston." . PHP_EOL;
+}

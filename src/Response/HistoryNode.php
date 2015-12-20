@@ -8,17 +8,18 @@
 
 namespace Adr\Response;
 
-
-class HistoryNode {
+class HistoryNode
+{
 
     private $viol;
     private $action;
 
-    public function __construct($xmlNode){
+    public function __construct($xmlNode)
+    {
         $this->action = array();
         $this->viol = array();
-        foreach($xmlNode->childNodes as $element){
-            if(!$element instanceof \DOMText) {
+        foreach ($xmlNode->childNodes as $element) {
+            if (!$element instanceof \DOMText) {
                 switch (strtoupper($element->nodeName)) {
                     case 'VIOL':
                         $this->{strtolower($element->nodeName)}[] = new Violation($element);
@@ -34,12 +35,14 @@ class HistoryNode {
         }
     }
 
-    public function hasViolations(){
-        return (count($this->viol))?true:false;
+    public function hasViolations()
+    {
+        return (count($this->viol)) ? true : false;
     }
 
-    public function hasActions(){
-        return (count($this->action))?true:false;
+    public function hasActions()
+    {
+        return (count($this->action)) ? true : false;
     }
 
     /**
@@ -57,6 +60,4 @@ class HistoryNode {
     {
         return $this->action;
     }
-
-
 }

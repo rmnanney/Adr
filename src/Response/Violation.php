@@ -12,7 +12,8 @@ use Adr\Response\Date\IncidentDate;
 use Adr\Response\Date\ConvictionDate;
 use Adr\State;
 
-class Violation {
+class Violation
+{
 
     private $type;
     private $mnemonic;
@@ -26,9 +27,10 @@ class Violation {
     private $disposition;
     private $docket;
 
-    public function __construct(\DOMElement $xmlNode){
-        foreach($xmlNode->childNodes as $element){
-            if(!$element instanceof \DOMText) {
+    public function __construct(\DOMElement $xmlNode)
+    {
+        foreach ($xmlNode->childNodes as $element) {
+            if (!$element instanceof \DOMText) {
                 switch (strtoupper($element->nodeName)) {
                     case 'INCIDENTDATE':
                         $this->incidentdate = new IncidentDate($element);
@@ -50,7 +52,8 @@ class Violation {
         }
     }
 
-    public function getTimeSinceIncident(){
+    public function getTimeSinceIncident()
+    {
         return time() - $this->incidentdate->getEpoch();
     }
 
@@ -141,7 +144,4 @@ class Violation {
     {
         return $this->docket;
     }
-
-
-
 }

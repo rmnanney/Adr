@@ -8,13 +8,14 @@
 
 namespace Adr\Response\License;
 
-
-class Restriction {
+class Restriction
+{
 
     private $restrition;
 
-    public function __construct(\DOMElement $xmlNode){
-        foreach($xmlNode->childNodes as $element) {
+    public function __construct(\DOMElement $xmlNode)
+    {
+        foreach ($xmlNode->childNodes as $element) {
             if (!$element instanceof \DOMText) {
                 $this->{strtolower($element->nodeName)} = $element->nodeValue;
             }
@@ -28,7 +29,4 @@ class Restriction {
     {
         return $this->restrition;
     }
-
-
-
 }

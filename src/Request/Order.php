@@ -10,8 +10,8 @@ namespace Adr\Request;
 
 use Adr\Date\Dob;
 
-
-class Order {
+class Order
+{
 
     private $Account;       //EG: S1234
     private $Handling;      //EG: OL
@@ -27,15 +27,18 @@ class Order {
     private $State;         //The Two-Digit State code, EG: WI
     private $xmlStr;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->DOB = new Dob();
     }
 
-    public function getXML(\DOMDocument $doc){
+    public function getXML(\DOMDocument $doc)
+    {
         return self::generateXML($doc);
     }
 
-    private function generateXML(\DOMDocument $doc){
+    private function generateXML(\DOMDocument $doc)
+    {
         $order = $doc->createElement('Order');
         $order->appendChild($doc->createElement('Account', $this->Account));
         $order->appendChild($doc->createElement('Handling', $this->Handling));
@@ -134,7 +137,8 @@ class Order {
     /**
      * @param \Adr\Date\Dob $DOB
      */
-    public function setDOB(Dob $DOB){
+    public function setDOB(Dob $DOB)
+    {
         $this->DOB = $DOB;
     }
 
@@ -145,7 +149,4 @@ class Order {
     {
         $this->State = $state;
     }
-
-
-
 }

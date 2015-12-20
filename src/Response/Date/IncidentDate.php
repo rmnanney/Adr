@@ -10,8 +10,7 @@ namespace Adr\Response\Date;
 
 use Adr\Date;
 
-class IncidentDate extends Date {
-
+class IncidentDate extends Date
+{
     protected $dateType = 5;
-
 }

@@ -8,14 +8,15 @@
 
 namespace Adr\Response;
 
-
-class Message {
+class Message
+{
 
     private $line;
 
-    public function __construct($xmlNode){
+    public function __construct($xmlNode)
+    {
         $this->line = array();
-        foreach($xmlNode->childNodes as $element) {
+        foreach ($xmlNode->childNodes as $element) {
             if (!$element instanceof \DOMText) {
                 $this->{strtolower($element->nodeName)}[] = $element->nodeValue;
             }

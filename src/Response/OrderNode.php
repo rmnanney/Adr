@@ -13,7 +13,8 @@ use Adr\Date\Dob;
 use Adr\State;
 use Adr\Time;
 
-class OrderNode {
+class OrderNode
+{
     private $controlnumber;
     private $date;
     private $time;
@@ -35,9 +36,10 @@ class OrderNode {
     private $identifer;  //This is an ADR TYPE-O in the XML :-(
     private $auxmisc;
 
-    public function __construct(\DOMElement $xmlNode){
-        foreach($xmlNode->childNodes as $element){
-            if(!$element instanceof \DOMText) {
+    public function __construct(\DOMElement $xmlNode)
+    {
+        foreach ($xmlNode->childNodes as $element) {
+            if (!$element instanceof \DOMText) {
                 switch (strtoupper($element->nodeName)) {
                     case 'DATE':
                         $this->{strtolower($element->nodeName)} = new Date($element);
@@ -378,7 +380,4 @@ class OrderNode {
     {
         $this->auxmisc = $auxmisc;
     }
-
-
-
 }

@@ -10,8 +10,7 @@ namespace Adr\Response\Date;
 
 use Adr\Date;
 
-class ConvictionDate extends Date {
-
+class ConvictionDate extends Date
+{
     protected $dateType = 6;
-
 }

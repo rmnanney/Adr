@@ -8,14 +8,15 @@
 
 namespace Adr;
 
-
-class State {
+class State
+{
 
     private $abbrev;
     private $full;
 
-    public function __construct(\DOMElement $xmlNode){
-        foreach($xmlNode->childNodes as $element) {
+    public function __construct(\DOMElement $xmlNode)
+    {
+        foreach ($xmlNode->childNodes as $element) {
             if (!$element instanceof \DOMText) {
                 $this->{strtolower($element->nodeName)} = $element->nodeValue;
             }
@@ -53,7 +54,4 @@ class State {
     {
         $this->full = $full;
     }
-
-
-
 }

@@ -10,7 +10,8 @@ namespace Adr\Response\Date;
 
 use Adr\Date;
 
-class ClearDate extends Date {
+class ClearDate extends Date
+{
 
     protected $dateType = 7;
 }

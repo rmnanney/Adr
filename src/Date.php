@@ -8,8 +8,8 @@
 
 namespace Adr;
 
-
-class Date {
+class Date
+{
 
     protected $year;
     protected $month;
@@ -17,9 +17,10 @@ class Date {
     private $epoch;
     protected $dateType;
 
-    public function __construct(\DOMElement $xmlNode = null){
-        if(null != $xmlNode){
-            foreach($xmlNode->childNodes as $element) {
+    public function __construct(\DOMElement $xmlNode = null)
+    {
+        if (null != $xmlNode) {
+            foreach ($xmlNode->childNodes as $element) {
                 if (!$element instanceof \DOMText) {
                     $this->{strtolower($element->nodeName)} = $element->nodeValue;
                 }
@@ -28,7 +29,8 @@ class Date {
         }
     }
 
-    public function getDateType(){
+    public function getDateType()
+    {
         return $this->dateType;
     }
 
@@ -95,6 +97,4 @@ class Date {
     {
         $this->epoch = $epoch;
     }
-
-
 }

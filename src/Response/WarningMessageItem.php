@@ -8,13 +8,15 @@
 
 namespace Adr\Response;
 
-class WarningMessageItem {
+class WarningMessageItem
+{
 
     private $line;
 
-    public function __construct(\DOMElement $xmlNode){
+    public function __construct(\DOMElement $xmlNode)
+    {
         $this->line = array();
-        foreach($xmlNode->childNodes as $element) {
+        foreach ($xmlNode->childNodes as $element) {
             if (!$element instanceof \DOMText) {
                 $this->{strtolower($element->nodeName)}[] = $element->nodeValue;
             }

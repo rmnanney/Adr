@@ -8,8 +8,8 @@
 
 namespace Adr;
 
-
-class Request extends \DOMDocument {
+class Request extends \DOMDocument
+{
 
     private $Host;                  //EG: Online
     private $Account;               //EG: S1234
@@ -25,14 +25,21 @@ class Request extends \DOMDocument {
 
     private $order;
 
-    public function addOrder(Request\Order $order) {
+    /**
+     * @param Request\Order $order
+     */
+    public function addOrder(Request\Order $order)
+    {
         $this->order = $order;
     }
 
+
     /**
+     * @param $curlObjecctOrSomething
      * @return Response
      */
-    public function send($curlObjecctOrSomething){
+    public function send($curlObjecctOrSomething)
+    {
         $this->xmlStr = self::generateXML();
 
         //Do transfer, throw errors or return response
@@ -43,12 +50,17 @@ class Request extends \DOMDocument {
     /**
      * @return string
      */
-    public function getXML(){
+    public function getXML()
+    {
         $this->formatOutput = true;
         return self::generateXML();
     }
 
-    private function generateXML(){
+    /**
+     * @return string
+     */
+    private function generateXML()
+    {
         $doc = new \DOMDocument('1.0');
         $doc->formatOutput = true;
         $adr = $doc->createElement('ADR');
@@ -68,28 +80,35 @@ class Request extends \DOMDocument {
         return $doc->saveXML();
     }
 
-    public function save($params){
+    /**
+     * @param string $params
+     */
+    public function save($params)
+    {
         //some kind of file handler(s) to persist to the filesystem, and/or maybe a DB.
     }
 
     /**
      * @param mixed $Host
      */
-    public function setHost($Host) {
+    public function setHost($Host)
+    {
         $this->Host = $Host;
     }
 
     /**
      * @param mixed $Account
      */
-    public function setAccount($Account) {
+    public function setAccount($Account)
+    {
         $this->Account = $Account;
     }
 
     /**
      * @param mixed $UserID
      */
-    public function setUserID($UserID) {
+    public function setUserID($UserID)
+    {
         $this->UserID = $UserID;
     }
 
@@ -97,7 +116,8 @@ class Request extends \DOMDocument {
      * @param mixed $Password
      * @param mixed $format
      */
-    public function setPassword($Password, $format) {
+    public function setPassword($Password, $format)
+    {
         $this->Password = $Password;
         $this->PasswordFormat = $format;
     }
@@ -106,7 +126,8 @@ class Request extends \DOMDocument {
      * @param mixed $NewPassword
      * @param mixed $format
      */
-    public function setNewPassword($NewPassword, $format) {
+    public function setNewPassword($NewPassword, $format)
+    {
         $this->NewPassword = $NewPassword;
         $this->NewPasswordFormat = $format;
     }
@@ -115,7 +136,8 @@ class Request extends \DOMDocument {
      * @param mixed $DeviceID
      * @param mixed $format
      */
-    public function setDeviceID($DeviceID, $format) {
+    public function setDeviceID($DeviceID, $format)
+    {
         $this->DeviceID = $DeviceID;
         $this->DeviceIDFormat = $format;
     }
@@ -123,15 +145,16 @@ class Request extends \DOMDocument {
     /**
      * @param mixed $ReportType
      */
-    public function setReportType($ReportType) {
+    public function setReportType($ReportType)
+    {
         $this->ReportType = $ReportType;
     }
 
     /**
      * @param Request\Order $order
      */
-    public function setOrder($order) {
+    public function setOrder($order)
+    {
         $this->order = $order;
     }
-
 }

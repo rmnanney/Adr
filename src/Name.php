@@ -8,16 +8,17 @@
 
 namespace Adr;
 
-
-class Name {
+class Name
+{
 
     private $first;
     private $last;
     private $fullname;
     private $fmlname;
 
-    public function __construct(\DOMElement $xmlNode){
-        foreach($xmlNode->childNodes as $element) {
+    public function __construct(\DOMElement $xmlNode)
+    {
+        foreach ($xmlNode->childNodes as $element) {
             if (!$element instanceof \DOMText) {
                 $this->{strtolower($element->nodeName)} = $element->nodeValue;
             }
@@ -55,5 +56,4 @@ class Name {
     {
         return $this->fmlname;
     }
-
 }

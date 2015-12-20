@@ -14,7 +14,8 @@ use Adr\Response\Date\ClearDate;
 use Adr\Response\Date\ActionEndDate;
 use Adr\State;
 
-class Action {
+class Action
+{
 
     private $type;
     private $mnemonic;
@@ -26,9 +27,10 @@ class Action {
     private $actionenddate;
     private $suspflag;
 
-    public function __construct(\DOMElement $xmlNode){
-        foreach($xmlNode->childNodes as $element){
-            if(!$element instanceof \DOMText) {
+    public function __construct(\DOMElement $xmlNode)
+    {
+        foreach ($xmlNode->childNodes as $element) {
+            if (!$element instanceof \DOMText) {
                 switch (strtoupper($element->nodeName)) {
                     case 'INCIDENTDATE':
                         $this->{strtolower($element->nodeName)} = new IncidentDate($element);
@@ -127,7 +129,4 @@ class Action {
     {
         return $this->suspflag;
     }
-
-
-
 }

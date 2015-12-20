@@ -8,7 +8,8 @@
 
 namespace Adr\Response;
 
-class Incident {
+class Incident
+{
 
     private $descsmall;
     private $statecode;
@@ -20,9 +21,10 @@ class Incident {
     private $statepoints;
     private $key;
 
-    public function __construct(\DOMElement $xmlNode){
-        foreach($xmlNode->childNodes as $element){
-            if(!$element instanceof \DOMText) {
+    public function __construct(\DOMElement $xmlNode)
+    {
+        foreach ($xmlNode->childNodes as $element) {
+            if (!$element instanceof \DOMText) {
                 $this->{strtolower($element->nodeName)} = $element->nodeValue;
             }
         }
@@ -99,7 +101,4 @@ class Incident {
     {
         return $this->key;
     }
-
-
-
 }

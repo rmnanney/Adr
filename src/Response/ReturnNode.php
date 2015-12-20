@@ -11,7 +11,8 @@ namespace Adr\Response;
 use Adr\Date;
 use Adr\Time;
 
-class ReturnNode {
+class ReturnNode
+{
 
     private $valid;
     private $date;
@@ -21,9 +22,10 @@ class ReturnNode {
     private $warningmessagelist;
 
 
-    public function __construct(\DOMElement $xmlNode){
-        foreach($xmlNode->childNodes as $element){
-            if(!$element instanceof \DOMText) {
+    public function __construct(\DOMElement $xmlNode)
+    {
+        foreach ($xmlNode->childNodes as $element) {
+            if (!$element instanceof \DOMText) {
                 switch (strtoupper($element->nodeName)) {
                     case 'DATE':
                         $this->{strtolower($element->nodeName)} = new Date($element);
@@ -89,7 +91,4 @@ class ReturnNode {
     {
         return $this->warningmessagelist;
     }
-
-
-
 }

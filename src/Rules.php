@@ -8,7 +8,7 @@
 
 namespace Adr;
 
-
-class Rules {
+class Rules
+{
 
 }

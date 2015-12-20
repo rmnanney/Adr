@@ -10,8 +10,7 @@ namespace Adr\Response\Date;
 
 use Adr\Date;
 
-class ActionEndDate extends Date {
-
+class ActionEndDate extends Date
+{
     protected $dateType = 8;
-
 }

@@ -18,7 +18,8 @@ use Adr\Response\ReturnNode;
 use \DOMXPath;
 
 //This needs to become a MVR2000 Object
-class Response extends \DOMDocument {
+class Response extends \DOMDocument
+{
 
     private $orderNodes;
     private $returnNodes;
@@ -35,7 +36,8 @@ class Response extends \DOMDocument {
     const XPATH_ADDITIONAL = '/ADR/MVR2000/Additional';
     const XPATH_HISTORY = '/ADR/MVR2000/History';
 
-    public function __construct($ver = 1, $enc = 'utf8'){
+    public function __construct($ver = 1, $enc = 'utf8')
+    {
         parent::__construct($ver, $enc);
         $this->orderNodes = array();
         $this->returnNodes = array();
@@ -46,48 +48,51 @@ class Response extends \DOMDocument {
         $this->historyNodes = array();
     }
 
-    public function getXML(){
+    public function getXML()
+    {
         $this->formatOutput = true;
         return parent::saveXML();
     }
 
-    public function parse(){
+    public function parse()
+    {
         $xpath = new DOMXPath($this);
         $result = $xpath->query(self::XPATH_ORDER);
-        foreach($result as $node){
+        foreach ($result as $node) {
             $this->orderNodes[] = new OrderNode($node);
         }
         $result = $xpath->query(self::XPATH_RETURN);
-        foreach($result as $node){
+        foreach ($result as $node) {
             $this->returnNodes[] = new ReturnNode($node);
         }
         $result = $xpath->query(self::XPATH_DRIVER);
-        foreach($result as $node){
+        foreach ($result as $node) {
             $this->driverNodes[] = new DriverNode($node);
         }
         $result = $xpath->query(self::XPATH_LICENSE);
-        foreach($result as $node){
+        foreach ($result as $node) {
             $this->licenseNodes[] = new LicenseNode($node);
         }
         $result = $xpath->query(self::XPATH_MISC);
-        foreach($result as $node){
+        foreach ($result as $node) {
             $this->miscNodes[] = new MiscNode($node);
         }
         $result = $xpath->query(self::XPATH_ADDITIONAL);
-        foreach($result as $node){
+        foreach ($result as $node) {
             $this->additionalNodes[] = new AdditionalNode($node);
         }
         $result = $xpath->query(self::XPATH_HISTORY);
-        foreach($result as $node){
+        foreach ($result as $node) {
             $this->historyNodes[] = new HistoryNode($node);
         }
     }
 
-    public function save($param){
-        if($param instanceof \mysqli){
+    public function save($param)
+    {
+        if ($param instanceof \mysqli) {
             //Persist to the SQL schema of your choosing.
 
-        }else{
+        } else {
             //Do the usual DOMDocument::save() instead.
             parent::save($param);
         }
@@ -150,13 +155,13 @@ class Response extends \DOMDocument {
     }
 
 
-
-    public function getScore(){
-
-    }
-
-    public function getDecision(){
+    public function getScore()
+    {
 
     }
 
+    public function getDecision()
+    {
+
+    }
 }
