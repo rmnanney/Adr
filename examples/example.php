@@ -13,12 +13,29 @@ use Adr\Request\Order;
 use Adr\Date\Dob;
 use Adr\Response;
 
-print PHP_EOL . PHP_EOL . "Starting a new ADR Query:" . PHP_EOL;
+//Intro: It's likely you will not have credentials to the ADR service, so this example will use a mock XML file for the
+//       request and response from the ADR service.
 
-//Just a quick rig to get this thing running ASAP.
+
+// If this is the first time you're running this code, you'll need to import the SQL files in the ./data directory
+// into the server of your choosing.
+//  #! mysql -u root yourDB < MVR_AVDCodes.sql
+// #! mysql -u root yourDB < MVR_Rules.sql
+// #! mysql -u root yourDB < MVR_RuleSets.sql
+// Next, you'll want to #! cp ./dbconfig.ini.example dbconfig.ini
+// Then, edit the dbconfig.ini with your sql server credentials
+// Finally, run this file
+// TODO: Create indexes in the three SQL files.
+
 $config = parse_ini_file(__DIR__ . '/dbconfig.ini');
+$db = new mysqli($config['hostname'], $config['username'], $config['password'], $config['dbname']);
 
-$db = new \mysqli($config['hostname'], $config['username'], $config['password'], $config['dbname']);
+print PHP_EOL . PHP_EOL . "Connecting to ADR DB:" . PHP_EOL;
+
+if ($db->connect_error) {
+    die('Connect Error (' . $db->connect_errno . ') '
+        . $db->connect_error . PHP_EOL . PHP_EOL);
+}
 
 //Setup the request to be send to ADR (American Driving Records) WebMVR.
 $requestOrder = new Order();  //NOTE: This is a Request\Order, NOT a Response\Order;  they are different!
@@ -41,6 +58,7 @@ $requestOrder->setProductID('DL');
 $requestOrder->setSubtype('3Y');
 $requestOrder->setPurpose('AA');
 
+//Create the Request object, then add the Order to it.
 $request = new Request();
 $request->setHost('Online');
 $request->setAccount('S1234');
@@ -53,9 +71,11 @@ $request->addOrder($requestOrder);
 //Let's check out how the Request XML looks
 print 'REQUEST XML BEING SENT TO ADR:' . PHP_EOL . $request->getXML();
 
+//Our Request is ready to send to ADR, but we're not actually doing it as I assume you do not have an account.
 $response = $request->send($CURLResource);
 
-//We aren't actually going to communicate with ADR, so we have to fake this out by calling response::loadXML below...
+//Since we aren't actually going to communicate with ADR, so we have to fake this out by calling response::loadXML below
+//There are four different XML files you can use to simulate different scores (see below)
 $response = new Response();
 //$response->loadXML(file_get_contents(__DIR__ . '/response.standard.xml'));
 $response->loadXML(file_get_contents(__DIR__ . '/response.preferred.xml'));
@@ -66,12 +86,16 @@ $response->parse();
 //If you want to have your response persist to the filesystem
 //$response->save('./mvr2.xml');
 
-
+//Our Response is received and parsed.  Lets print out the XML so you can look it over.
 print PHP_EOL . PHP_EOL . "Simulated response from ADR:" . PHP_EOL;
 print $response->getXML();
 print PHP_EOL . PHP_EOL . "Begin custom processing of response XML:" . PHP_EOL;
 
+//At this point, the communication with ADR is done, and you can do whatever you need with the response data.  This
+//example involves scoring the data, based on our Codes, Rules and RuleSets (in the SQL).  This does little more than
+//give an idea of what you might want to do with the data.
 
+//History nodes have violations, violations have AVD Codes which we will score.
 $historyNodes = $response->getHistoryNodes();
 
 $pointTotal = 0;
@@ -107,7 +131,7 @@ if (count($historyNodes)) {
         }
     }
 
-    //We have found AVD Codes we need to lookup
+    //We have found AVD Codes we need to lookup.
     if (count($rulesHits)) {
         print_r($rulesHits);
         //Rules are classified into buckets, known as RuleSets
@@ -144,6 +168,8 @@ if (count($historyNodes)) {
     }
 }
 
+
+//If you want to categorize the results, you can use the $pointTotal to do something interesting, such as ...
 echo "Total points: $pointTotal" . PHP_EOL;
 echo "Decisions found: " . var_export($decisions, true) . PHP_EOL;
 
