@@ -11,4 +11,6 @@
 }
 ```
 
-**Please see the [example](src/examples/example.php) for a quick use-case.  Additional examples and proper documentation is on the to-do list.**
+**Please see the [example](examples/example.php) for a quick use-case.  Additional examples and proper documentation is on the to-do list.**
+
+
