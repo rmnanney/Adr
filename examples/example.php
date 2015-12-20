@@ -6,7 +6,7 @@
  * Time: 1:34 PM
  */
 
-require_once __DIR__ . '/../../../vendor/autoload.php';
+require_once __DIR__ . '/../../../autoload.php';
 
 use Adr\Request;
 use Adr\Request\Order;
