@@ -14,13 +14,28 @@ class State
     private $abbrev;
     private $full;
 
-    public function __construct(\DOMElement $xmlNode)
+    public function __construct(\DOMElement $xmlNode = null)
     {
-        foreach ($xmlNode->childNodes as $element) {
-            if (!$element instanceof \DOMText) {
-                $this->{strtolower($element->nodeName)} = $element->nodeValue;
+        if (null != $xmlNode) {
+            foreach ($xmlNode->childNodes as $element) {
+                if (!$element instanceof \DOMText) {
+                    $this->{strtolower($element->nodeName)} = $element->nodeValue;
+                }
             }
         }
+    }
+
+    public function getXML(\DOMDocument $doc)
+    {
+        return self::generateXML($doc);
+    }
+
+    private function generateXML(\DOMDocument $doc)
+    {
+        $state = $doc->createElement('State');
+        $state->appendChild($doc->createElement('Abbrev', $this->abbrev));
+        $state->appendChild($doc->createElement('Full', $this->full));
+        return $state;
     }
 
     /**

@@ -11,6 +11,7 @@ require_once __DIR__ . '/../../../autoload.php';
 use Adr\Request;
 use Adr\Request\Order;
 use Adr\Date\Dob;
+use Adr\State;
 use Adr\Response;
 
 //Intro: It's likely you will not have credentials to the ADR service, so this example will use a mock XML file for the
@@ -45,12 +46,14 @@ $dob = new Dob();
 $dob->setYear(2000);
 $dob->setMonth(01);
 $dob->setDay(16);
-$requestOrder->setState('WI');
+$state = new State();
+$state->setAbbrev('WI');
 $requestOrder->setLicense('N50073371234-01');
 $requestOrder->setFirstName('Test');
 $requestOrder->setLastName('TestLastName');
 $requestOrder->setDOB($dob);
 $requestOrder->setMisc('SomeRandomInternalTrackingID');
+$requestOrder->setState($state);
 $requestOrder->setAuxMisc('SomeOtherRandomInternalTrackingID');
 $requestOrder->setAccount('S1234');
 $requestOrder->setHandling('OL');

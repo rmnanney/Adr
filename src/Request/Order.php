@@ -9,6 +9,7 @@
 namespace Adr\Request;
 
 use Adr\Date\Dob;
+use Adr\State;
 
 class Order
 {
@@ -31,6 +32,7 @@ class Order
     public function __construct()
     {
         $this->DOB = new Dob();
+        $this->State = new State();
     }
 
     public function getXML(\DOMDocument $doc)
@@ -52,6 +54,7 @@ class Order
         $order->appendChild($doc->createElement('LastName', $this->LastName));
         $order->appendChild($doc->createElement('License', $this->License));
         $order->appendChild($doc->createElement('SSN', $this->SSN));
+        $order->appendChild($this->State->getXML($doc));
         $order->appendChild($this->DOB->getXML($doc));
         return $order;
     }
@@ -145,9 +148,9 @@ class Order
     }
 
     /**
-     * @param string $state The Two-Digit state code.
+     * @param \Adr\State $state
      */
-    public function setState($state)
+    public function setState(State $state)
     {
         $this->State = $state;
     }
