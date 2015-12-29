@@ -25,6 +25,7 @@ class Order
     private $License;       //EG: N50073371234-06
     private $DOB;           //This is an Adr\Date\Dob object.
     private $State;         //The Two-Digit State code, EG: WI
+    private $SSN;           //Social Security Numbers.
     private $xmlStr;
 
     public function __construct()
@@ -50,6 +51,7 @@ class Order
         $order->appendChild($doc->createElement('FirstName', $this->FirstName));
         $order->appendChild($doc->createElement('LastName', $this->LastName));
         $order->appendChild($doc->createElement('License', $this->License));
+        $order->appendChild($doc->createElement('SSN', $this->SSN));
         $order->appendChild($this->DOB->getXML($doc));
         return $order;
     }
@@ -148,5 +150,10 @@ class Order
     public function setState($state)
     {
         $this->State = $state;
+    }
+
+    public function setSSN($ssn)
+    {
+        $this->SSN = $ssn;
     }
 }
