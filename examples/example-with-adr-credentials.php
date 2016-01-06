@@ -67,12 +67,12 @@ $request = new Request();
 //If you call this method, you will need to ensure a
 //$newPassword = $request->resetPassword();
 $request->setHost('Online');
-$request->setAccount('YOURACCOUNT');
+$request->setAccount('K1164');
 $request->setUserID('01');
-$request->setPassword('YOURPASS');
+$request->setPassword('bUh0CDvsL!');
 $request->setReportType('XML');
-$request->setADRIPAddress('1.1.1.1.');
-$request->setADRPort('12345');
+$request->setADRIPAddress('64.15.186.34');
+$request->setADRPort('41300');
 
 $request->addOrder($requestOrder);
 

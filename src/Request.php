@@ -43,7 +43,7 @@ class Request extends \DOMDocument
         curl_setopt($ch, CURLOPT_TIMEOUT, 40);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
-        curl_setopt($ch, CURLOPT_URL, 'http://' . $this->ADRIPAddress . ":" . $this->ADRPort); //set to url to post to
+        curl_setopt($ch, CURLOPT_URL, 'https://' . $this->ADRIPAddress . ":" . $this->ADRPort); //set to url to post to
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); // tell curl to return data in a variable;
         curl_setopt($ch, CURLOPT_POST, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, 'OrderXml=' . $this->xmlStr); // post the xml
