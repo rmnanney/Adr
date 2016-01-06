@@ -14,16 +14,12 @@ class Request extends \DOMDocument
     private $Host;                  //EG: Online
     private $Account;               //EG: S1234
     private $UserID;                //EG: 03
-    private $Password;              //EG: 22225d7bs6e4bfdf71d5d5a1e912345
-    private $PasswordFormat;        //EG: encrypted
-    private $NewPassword;           //EG: 22225d7bs6e4bfdf71d5d5a1e912345
-    private $NewPasswordFormat;     //EG: encrypted
-    private $NewPasswordEncoded;    //EG: 5def5d7bs6e4bfdf71d5d5a1e9971fa4
-    private $DeviceID;              //EG: FF02A84F9B1D4314MVDEC5F98200FD57B0HLMEIDDHDCGN
-    private $DeviceIDFormat;        //EG: encoded
+    private $Password;              //EG: asdf.1234
+    private $NewPassword;           //EG: 4321.fdsa
     private $ReportType;            //EG: XML
     private $xmlStr;
-
+    private $ADRIPAddress;
+    private $ADRPort;
     private $order;
 
     /**
@@ -36,16 +32,30 @@ class Request extends \DOMDocument
 
 
     /**
-     * @param $curlObjecctOrSomething
      * @return Response
+     * @throws \Exception
      */
-    public function send($curlObjecctOrSomething)
+    public function send()
     {
         $this->xmlStr = self::generateXML();
 
-        //Do transfer, throw errors or return response
+        $ch = curl_init(); //initiate the curl session
+        curl_setopt($ch, CURLOPT_TIMEOUT, 40);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+        curl_setopt($ch, CURLOPT_URL, $this->ADRIPAddress.":".$this->ADRPort); //set to url to post to
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); // tell curl to return data in a variable;
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, 'OrderXml='.$this->xmlStr); // post the xml
+        $xmlResponse = curl_exec($ch);
+        if(!$xmlResponse){
+            throw new \Exception( 'Unable to connect to ADR: ' . curl_error($ch) );
+        }
 
-        return new Response();
+        curl_close ($ch);
+        $response = new Response();
+        $response->loadXML($xmlResponse);
+        return $response;
     }
 
     /**
@@ -69,11 +79,10 @@ class Request extends \DOMDocument
         $comm->appendChild($doc->createElement('Host', $this->Host));
         $comm->appendChild($doc->createElement('Account', $this->Account));
         $comm->appendChild($doc->createElement('UserID', $this->UserID));
-        $comm->appendChild($doc->createElement('Password', $this->Password)->setAttribute('format', $this->PasswordFormat));
+        $comm->appendChild($doc->createElement('Password', $this->Password));
         if(!empty($this->NewPassword)){
-            $comm->appendChild($doc->createElement('NewPassword', $this->NewPassword)->setAttribute('format', $this->NewPasswordFormat));
+            $comm->appendChild($doc->createElement('NewPassword', $this->NewPassword));
         }
-        $comm->appendChild($doc->createElement('DeviceID', $this->DeviceID)->setAttribute('format', $this->DeviceIDFormat));
         $comm->appendChild($doc->createElement('ReportType', $this->ReportType));
         $adr->appendChild($comm);
 
@@ -85,17 +94,16 @@ class Request extends \DOMDocument
 
     /**
      * @param string $params
+     * @return bool
      */
     public function save($params)
     {
         //some kind of file handler(s) to persist to the filesystem, and/or maybe a DB.
+        return true;
     }
 
     public function resetPassword(){
         $this->NewPassword = $this->generatePassword();
-        $output = array();
-        exec("java -cp " . $this->adrJarFile . " adr.client.util.adrclienttool ".$this->NewPassword, $output);
-        $this->NewPasswordEncoded = trim(substr($output[0], 1+strpos($output[0], ":")));
     }
 
     private function generatePassword() {
@@ -130,6 +138,22 @@ class Request extends \DOMDocument
     }
 
     /**
+     * @param mixed $ADRIPAddress
+     */
+    public function setADRIPAddress($ADRIPAddress)
+    {
+        $this->ADRIPAddress = $ADRIPAddress;
+    }
+
+    /**
+     * @param mixed $ADRPort
+     */
+    public function setADRPort($ADRPort)
+    {
+        $this->ADRPort = $ADRPort;
+    }
+
+    /**
      * @param mixed $Host
      */
     public function setHost($Host)
@@ -155,32 +179,18 @@ class Request extends \DOMDocument
 
     /**
      * @param mixed $Password
-     * @param mixed $format
      */
-    public function setPassword($Password, $format)
+    public function setPassword($Password)
     {
         $this->Password = $Password;
-        $this->PasswordFormat = $format;
     }
 
     /**
      * @param mixed $NewPassword
-     * @param mixed $format
      */
-    public function setNewPassword($NewPassword, $format)
+    public function setNewPassword($NewPassword)
     {
         $this->NewPassword = $NewPassword;
-        $this->NewPasswordFormat = $format;
-    }
-
-    /**
-     * @param mixed $DeviceID
-     * @param mixed $format
-     */
-    public function setDeviceID($DeviceID, $format)
-    {
-        $this->DeviceID = $DeviceID;
-        $this->DeviceIDFormat = $format;
     }
 
     /**

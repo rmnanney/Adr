@@ -55,7 +55,7 @@ $requestOrder->setDOB($dob);
 $requestOrder->setMisc('SomeRandomInternalTrackingID');
 $requestOrder->setState($state);
 $requestOrder->setAuxMisc('SomeOtherRandomInternalTrackingID');
-$requestOrder->setAccount('S1234');
+$requestOrder->setAccount('XXXX');
 $requestOrder->setHandling('OL');
 $requestOrder->setProductID('DL');
 $requestOrder->setSubtype('3Y');
@@ -63,20 +63,30 @@ $requestOrder->setPurpose('AA');
 
 //Create the Request object, then add the Order to it.
 $request = new Request();
+//$request->resetPassword();
 $request->setHost('Online');
-$request->setAccount('S1234');
-$request->setUserID('03');
-$request->setPassword('22225d7bs6e4bfdf71d5d5a1e912345', 'encrypted');
-$request->setDeviceID('0C341E44063418446A304A3615314C30184C8831244C19442B404C473F40512345441C34274928351B4D4B431D4139456C4D5B36644D593490332B405123456', 'encrypted');
+$request->setAccount('XXXXX');
+$request->setUserID('01');
+$request->setPassword('XXXXXXXXX');
 $request->setReportType('XML');
+$request->setADRIPAddress('https://333.333.333.333');
+$request->setADRPort('12345');
+
 $request->addOrder($requestOrder);
 
 //Let's check out how the Request XML looks
-print 'REQUEST XML BEING SENT TO ADR:' . PHP_EOL . $request->getXML();
+//print 'REQUEST XML BEING SENT TO ADR:' . PHP_EOL . $request->getXML();
 
 //Our Request is ready to send to ADR, but we're not actually doing it as I assume you do not have an account.
-$response = $request->send($CURLResource);
+try{
+    $response = $request->send();
+} catch (Exception $e) {
+    print "Exception found : " . $e->getMessage();
+}
 
+echo "Response retreived.";
+print $response->getXML();
+exit;
 //Since we aren't actually going to communicate with ADR, so we have to fake this out by calling response::loadXML below
 //There are four different XML files you can use to simulate different scores (see below)
 $response = new Response();
