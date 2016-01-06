@@ -20,16 +20,17 @@ use Adr\Response;
 
 // If this is the first time you're running this code, you'll need to import the SQL files in the ./data directory
 // into the server of your choosing.
-//  #! mysql -u root yourDB < MVR_AVDCodes.sql
+// #! mysql -u root yourDB < MVR_AVDCodes.sql
 // #! mysql -u root yourDB < MVR_Rules.sql
 // #! mysql -u root yourDB < MVR_RuleSets.sql
 // Next, you'll want to #! cp ./dbconfig.ini.example dbconfig.ini
 // Then, edit the dbconfig.ini with your sql server credentials
+// ANND DEN, ensure you setup the adrconfig.ini with your ADR DEV Credentials.
 // Finally, run this file
 // TODO: Create indexes in the three SQL files.
 
-$config = parse_ini_file(__DIR__ . '/dbconfig.ini');
-$db = new mysqli($config['hostname'], $config['username'], $config['password'], $config['dbname']);
+$dbConfig = parse_ini_file(__DIR__ . '/dbconfig.ini');
+$db = new mysqli($dbConfig['hostname'], $dbConfig['username'], $dbConfig['password'], $dbConfig['dbname']);
 
 print PHP_EOL . PHP_EOL . "Connecting to ADR DB:" . PHP_EOL;
 
@@ -38,24 +39,33 @@ if ($db->connect_error) {
         . $db->connect_error . PHP_EOL . PHP_EOL);
 }
 
+$adrConfig = parse_ini_file(__DIR__ . '/adrconfig.ini');
+$CONFIG_HOST = $adrConfig['host'];
+$CONFIG_ACCOUNT = $adrConfig['account'];
+$CONFIG_USERID = $adrConfig['userid'];
+$CONFIG_PASSWORD = $adrConfig['password'];
+$CONFIG_REPORTTYPE = $adrConfig['reporttype'];
+$CONFIG_ADRIPADDRESS = $adrConfig['adripaddress'];
+$CONFIG_ADRPORT = $adrConfig['adrport'];
+
 //Setup the request to be send to ADR (American Driving Records) WebMVR.
 $requestOrder = new Order();  //NOTE: This is a Request\Order, NOT a Response\Order;  they are different!
 //NOTE!! ADR Caveat: If the number of the year is specified in a two digit format, the values between 00-69
 // are mapped to 2000-2069 and 70-99 to 1970-1999.
 $dob = new Dob();
-$dob->setYear(2000);
-$dob->setMonth(01);
-$dob->setDay(16);
+$dob->setYear(1975);
+$dob->setMonth(11);
+$dob->setDay(12);
 $state = new State();
-$state->setAbbrev('WI');
-$requestOrder->setLicense('N50073371234-01');
-$requestOrder->setFirstName('Test');
-$requestOrder->setLastName('TestLastName');
+$state->setAbbrev('CA');
+$requestOrder->setLicense('A1000004');
+$requestOrder->setFirstName('CHRIS');
+$requestOrder->setLastName('SMITH');
 $requestOrder->setDOB($dob);
 $requestOrder->setMisc('SomeRandomInternalTrackingID');
 $requestOrder->setState($state);
 $requestOrder->setAuxMisc('SomeOtherRandomInternalTrackingID');
-$requestOrder->setAccount('S1234');
+$requestOrder->setAccount($CONFIG_ACCOUNT);
 $requestOrder->setHandling('OL');
 $requestOrder->setProductID('DL');
 $requestOrder->setSubtype('3Y');
@@ -66,13 +76,13 @@ $request = new Request();
 
 //If you call this method, you will need to ensure a
 //$newPassword = $request->resetPassword();
-$request->setHost('Online');
-$request->setAccount('K1164');
-$request->setUserID('01');
-$request->setPassword('bUh0CDvsL!');
-$request->setReportType('XML');
-$request->setADRIPAddress('64.15.186.34');
-$request->setADRPort('41300');
+$request->setHost($CONFIG_HOST);
+$request->setAccount($CONFIG_ACCOUNT);
+$request->setUserID($CONFIG_USERID);
+$request->setPassword($CONFIG_PASSWORD);
+$request->setReportType($CONFIG_REPORTTYPE);
+$request->setADRIPAddress($CONFIG_ADRIPADDRESS);
+$request->setADRPort($CONFIG_ADRPORT);
 
 $request->addOrder($requestOrder);
 

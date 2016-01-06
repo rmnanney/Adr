@@ -58,11 +58,9 @@ class Request extends \DOMDocument
         $response->parse();
 
         //Let's check for any errors
-        var_dump($response->getError());
         if($response->getError() != '0'){
             throw new \Exception('ADR ERROR: ' . $response->getError() . ' ' . $response->getErrorDescription() . PHP_EOL);
         }
-
         return $response;
     }
 

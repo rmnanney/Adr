@@ -1,7 +1,7 @@
-host = Online
-account = Z1234
-userID = 01
-password = 1234.wxyz
-reportType = XML
-ADRIPAddress = 8.8.8.8
-ADRPort = 12345
+host = "Online"
+account = "Z1234"
+userID = "01"
+password = "1234.wxyz"
+reportType = "XML"
+ADRIPAddress = "8.8.8.8"
+ADRPort = "12345"
