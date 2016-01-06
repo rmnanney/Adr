@@ -15,6 +15,7 @@ use Adr\Response\LicenseNode;
 use Adr\Response\MiscNode;
 use Adr\Response\OrderNode;
 use Adr\Response\ReturnNode;
+use Adr\Response\SummaryNode;
 use \DOMXPath;
 
 //This needs to become a MVR2000 Object
@@ -28,6 +29,7 @@ class Response extends \DOMDocument
     private $miscNodes;
     private $additionalNodes;
     private $historyNodes;
+    private $summaryNode;
     const XPATH_ORDER = '/ADR/MVR2000/Order';
     const XPATH_RETURN = '/ADR/MVR2000/Return';
     const XPATH_DRIVER = '/ADR/MVR2000/Driver';
@@ -35,7 +37,13 @@ class Response extends \DOMDocument
     const XPATH_MISC = '/ADR/MVR2000/Misc';
     const XPATH_ADDITIONAL = '/ADR/MVR2000/Additional';
     const XPATH_HISTORY = '/ADR/MVR2000/History';
+    const XPATH_SUMMARY = '/ADR/Summary';
 
+    /**
+     * Response constructor.
+     * @param int $ver
+     * @param string $enc
+     */
     public function __construct($ver = 1, $enc = 'utf8')
     {
         parent::__construct($ver, $enc);
@@ -48,12 +56,18 @@ class Response extends \DOMDocument
         $this->historyNodes = array();
     }
 
+    /**
+     * @return string
+     */
     public function getXML()
     {
         $this->formatOutput = true;
         return parent::saveXML();
     }
 
+    /**
+     *
+     */
     public function parse()
     {
         $xpath = new DOMXPath($this);
@@ -85,8 +99,16 @@ class Response extends \DOMDocument
         foreach ($result as $node) {
             $this->historyNodes[] = new HistoryNode($node);
         }
+        $result = $xpath->query(self::XPATH_SUMMARY);
+        foreach ($result as $node) {
+            $this->summaryNode = new SummaryNode($node);
+        }
     }
 
+    /**
+     * @param string $param
+     * @return void
+     */
     public function save($param)
     {
         if ($param instanceof \mysqli) {
@@ -96,6 +118,22 @@ class Response extends \DOMDocument
             //Do the usual DOMDocument::save() instead.
             parent::save($param);
         }
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getError()
+    {
+        return $this->summaryNode->getError();
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getErrorDescription()
+    {
+        return $this->summaryNode->getErrorDescription();
     }
 
     /**
@@ -155,11 +193,17 @@ class Response extends \DOMDocument
     }
 
 
+    /**
+     *
+     */
     public function getScore()
     {
 
     }
 
+    /**
+     *
+     */
     public function getDecision()
     {
 

@@ -43,10 +43,10 @@ class Request extends \DOMDocument
         curl_setopt($ch, CURLOPT_TIMEOUT, 40);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
-        curl_setopt($ch, CURLOPT_URL, $this->ADRIPAddress.":".$this->ADRPort); //set to url to post to
+        curl_setopt($ch, CURLOPT_URL, 'http://' . $this->ADRIPAddress . ":" . $this->ADRPort); //set to url to post to
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); // tell curl to return data in a variable;
         curl_setopt($ch, CURLOPT_POST, true);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, 'OrderXml='.$this->xmlStr); // post the xml
+        curl_setopt($ch, CURLOPT_POSTFIELDS, 'OrderXml=' . $this->xmlStr); // post the xml
         $xmlResponse = curl_exec($ch);
         if(!$xmlResponse){
             throw new \Exception( 'Unable to connect to ADR: ' . curl_error($ch) );
@@ -55,6 +55,14 @@ class Request extends \DOMDocument
         curl_close ($ch);
         $response = new Response();
         $response->loadXML($xmlResponse);
+        $response->parse();
+
+        //Let's check for any errors
+        var_dump($response->getError());
+        if($response->getError() != '0'){
+            throw new \Exception('ADR ERROR: ' . $response->getError() . ' ' . $response->getErrorDescription() . PHP_EOL);
+        }
+
         return $response;
     }
 
@@ -102,6 +110,9 @@ class Request extends \DOMDocument
         return true;
     }
 
+    /**
+     * @return string
+     */
     public function resetPassword(){
         $this->NewPassword = $this->generatePassword();
     }
@@ -208,4 +219,26 @@ class Request extends \DOMDocument
     {
         $this->order = $order;
     }
+
+    /**
+     * @return string
+     */
+    public function getNewPassword()
+    {
+            return $this->NewPassword;
+    }
+
+    /**
+     * @return bool
+     */
+    public function hasNewPassword()
+    {
+        if(!empty($this->NewPassword))
+        {
+            return true;
+        }
+        return false;
+    }
+
 }
+

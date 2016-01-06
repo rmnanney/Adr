@@ -55,7 +55,7 @@ $requestOrder->setDOB($dob);
 $requestOrder->setMisc('SomeRandomInternalTrackingID');
 $requestOrder->setState($state);
 $requestOrder->setAuxMisc('SomeOtherRandomInternalTrackingID');
-$requestOrder->setAccount('XXXX');
+$requestOrder->setAccount('S1234');
 $requestOrder->setHandling('OL');
 $requestOrder->setProductID('DL');
 $requestOrder->setSubtype('3Y');
@@ -63,44 +63,36 @@ $requestOrder->setPurpose('AA');
 
 //Create the Request object, then add the Order to it.
 $request = new Request();
-//$request->resetPassword();
+
+//If you call this method, you will need to ensure a
+//$newPassword = $request->resetPassword();
 $request->setHost('Online');
-$request->setAccount('XXXXX');
+$request->setAccount('YOURACCOUNT');
 $request->setUserID('01');
-$request->setPassword('XXXXXXXXX');
+$request->setPassword('YOURPASS');
 $request->setReportType('XML');
-$request->setADRIPAddress('333.333.333.333');
+$request->setADRIPAddress('1.1.1.1.');
 $request->setADRPort('12345');
 
 $request->addOrder($requestOrder);
 
 //Let's check out how the Request XML looks
-//print 'REQUEST XML BEING SENT TO ADR:' . PHP_EOL . $request->getXML();
+print 'REQUEST XML BEING SENT TO ADR:' . PHP_EOL . $request->getXML();
 
 //Our Request is ready to send to ADR, but we're not actually doing it as I assume you do not have an account.
 try{
     $response = $request->send();
+
+    //Did we reset that password?  Save it or you'll be <epic>Sad Face</epic>.
+    if($request->hasNewPassword()){
+        $newPassword = $request->getNewPassword();
+        //Open a file / database / whatever and save your new password.
+    }
 } catch (Exception $e) {
     print "Exception found : " . $e->getMessage();
 }
 
-echo "Response retreived.";
-print $response->getXML();
-exit;
-//Since we aren't actually going to communicate with ADR, so we have to fake this out by calling response::loadXML below
-//There are four different XML files you can use to simulate different scores (see below)
-$response = new Response();
-//$response->loadXML(file_get_contents(__DIR__ . '/response.standard.xml'));
-$response->loadXML(file_get_contents(__DIR__ . '/response.preferred.xml'));
-//$response->loadXML(file_get_contents(__DIR__ . '/response.decline.xml'));
-//$response->loadXML(file_get_contents(__DIR__ . '/response.refer.xml'));
-$response->parse();
 
-//If you want to have your response persist to the filesystem
-//$response->save('./mvr2.xml');
-
-//Our Response is received and parsed.  Lets print out the XML so you can look it over.
-print PHP_EOL . PHP_EOL . "Simulated response from ADR:" . PHP_EOL;
 print $response->getXML();
 print PHP_EOL . PHP_EOL . "Begin custom processing of response XML:" . PHP_EOL;
 
