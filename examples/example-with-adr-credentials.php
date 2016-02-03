@@ -42,11 +42,11 @@ if ($db->connect_error) {
 $adrConfig = parse_ini_file(__DIR__ . '/adrconfig.ini');
 $CONFIG_HOST = $adrConfig['host'];
 $CONFIG_ACCOUNT = $adrConfig['account'];
-$CONFIG_USERID = $adrConfig['userid'];
+$CONFIG_USERID = $adrConfig['userID'];
 $CONFIG_PASSWORD = $adrConfig['password'];
-$CONFIG_REPORTTYPE = $adrConfig['reporttype'];
-$CONFIG_ADRIPADDRESS = $adrConfig['adripaddress'];
-$CONFIG_ADRPORT = $adrConfig['adrport'];
+$CONFIG_REPORTTYPE = $adrConfig['reportType'];
+$CONFIG_ADRIPADDRESS = $adrConfig['ADRIPAddress'];
+$CONFIG_ADRPORT = $adrConfig['adrADRPortport'];
 
 //Setup the request to be send to ADR (American Driving Records) WebMVR.
 $requestOrder = new Order();  //NOTE: This is a Request\Order, NOT a Response\Order;  they are different!
@@ -83,6 +83,9 @@ $request->setPassword($CONFIG_PASSWORD);
 $request->setReportType($CONFIG_REPORTTYPE);
 $request->setADRIPAddress($CONFIG_ADRIPADDRESS);
 $request->setADRPort($CONFIG_ADRPORT);
+
+//An optional report
+$request->setAdditionalReportType(\Adr\Request\AdditionalReportType::HTML);
 
 $request->addOrder($requestOrder);
 

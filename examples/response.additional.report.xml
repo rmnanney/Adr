@@ -1,0 +1,536 @@
+<ADR><Summary>
+    <Online>
+        <Error>0</Error>
+        <ErrorDescription>no error</ErrorDescription>
+        <Result>1</Result>
+        <ResultDescription>successful</ResultDescription>
+        <Message>Login was Sucessful</Message>
+        <DaysLeft>60</DaysLeft>
+        <ShowWarning>N</ShowWarning>
+    </Online>
+    <Orders>
+        <Order>
+            <Host>OL</Host>
+            <Last>RODRIGUEZ</Last>
+            <License>L2011143</License>
+            <Miscellaneous>TEST ONE</Miscellaneous>
+            <Status>Success</Status>
+        </Order>
+    </Orders>
+    <Reports>
+        <Report>
+            <Host>OL</Host>
+            <Last>RODRIGUEZ</Last>
+            <License>L2011143</License>
+            <Miscellaneous>TEST ONE</Miscellaneous>
+            <Status>Received</Status>
+        </Report>
+    </Reports>
+</Summary>
+    <MVR2000>
+
+        <Order>
+            <ControlNumber>000001</ControlNumber>
+            <Date>
+                <Year>2011</Year>
+                <Month>7</Month>
+                <Day>28</Day>
+            </Date>
+            <Time>
+                <Hour>15</Hour>
+                <Minute>26</Minute>
+            </Time>
+            <DOB>
+                <Year>1975</Year>
+                <Month>5</Month>
+                <Day>25</Day>
+            </DOB>
+            <Type>1 = MVR</Type>
+            <Handling>OL</Handling>
+            <Misc>TEST ONE</Misc>
+            <State>
+                <Abbrev>CA</Abbrev>
+                <Full>CALIFORNIA</Full>
+            </State>
+            <License>L2011143</License>
+            <LastName>RODRIGUEZ</LastName>
+            <FirstName>JAIVER</FirstName>
+            <MiddleName>J</MiddleName>
+            <Account>X9999</Account>
+            <InputMethod>CI</InputMethod>
+            <OutputMethod>CO</OutputMethod>
+            <Purpose>AA</Purpose>
+            <Subtype>3Y</Subtype>
+            <ProductID>DL</ProductID>
+            <Tracking>000000</Tracking>
+            <Identifer>000001</Identifer>
+        </Order>
+        <Return>
+            <Valid>Y</Valid>
+            <Date>
+                <Year>2011</Year>
+                <Month>7</Month>
+                <Day>28</Day>
+            </Date>
+            <Time>
+                <Hour>15</Hour>
+                <Minute>26</Minute>
+            </Time>
+            <Clear>N</Clear>
+            <OriginalType>RAW</OriginalType>
+        </Return>
+        <Driver>
+            <Name>
+                <First>JAIVER</First>
+                <Middle>J</Middle>
+                <Last>RODRIGUEZ</Last>
+                <FullName>RODRIGUEZ, JAIVER J</FullName>
+                <FMLName>JAIVER J RODRIGUEZ</FMLName>
+            </Name>
+            <DOB>
+                <Year>1975</Year>
+                <Month>5</Month>
+                <Day>25</Day>
+            </DOB>
+            <Age>36</Age>
+            <License>L2011143</License>
+            <Height>509</Height>
+            <Weight>150</Weight>
+            <Hair>BROWN</Hair>
+            <Eye>BLUE</Eye>
+            <Addresses>
+                <Addressline1>2345 MAIN ST</Addressline1>
+                <City>LONG BEACH</City>
+                <State>
+                    <Abbrev>CA</Abbrev>
+                    <Full>CALIFORNIA</Full>
+                </State>
+                <Zip>93411</Zip>
+                <Type>RESIDENCE</Type>
+            </Addresses>
+        </Driver>
+        <License>
+            <Type>PERSONAL</Type>
+            <Class>NON-COMMERCIAL</Class>
+            <ClassCode>C</ClassCode>
+            <ExpireDate>
+                <Year>2012</Year>
+                <Month>10</Month>
+                <Day>20</Day>
+            </ExpireDate>
+            <IssueDate>
+                <Year>2007</Year>
+                <Month>10</Month>
+                <Day>18</Day>
+            </IssueDate>
+            <Statuses>
+                <Status>VALID</Status>
+            </Statuses>
+            <OrigIssueC>1968</OrigIssueC>
+            <FRDescription>
+                <FRCode>O - COMPLETION OF DRINK DRVR PRGM &amp; PROOF REQ (SR1P UNACCEPT)</FRCode>
+                <FileDate>
+                    <Year>2011</Year>
+                    <Month>9</Month>
+                    <Day>3</Day>
+                </FileDate>
+            </FRDescription>
+            <Restrictions>
+                <Restriction>CORRECTIVE LENSES</Restriction>
+            </Restrictions>
+        </License>
+        <Probation>
+            <DocketNumber>M412345</DocketNumber>
+            <State>
+                <Abbrev>CA</Abbrev>
+                <Full>CALIFORNIA</Full>
+            </State>
+            <IncidentDate>
+                <Year>2011</Year>
+                <Month>1</Month>
+                <Day>5</Day>
+            </IncidentDate>
+            <TerminatedDate>
+                <Year>2014</Year>
+                <Month>3</Month>
+                <Day>3</Day>
+            </TerminatedDate>
+            <Descriptions>
+                <Description>SHALL NOT COMMIT CRIMES, REFUSE BAC TEST, OR DRIVE WITH ALCOHOL IN BLOOD</Description>
+                <Description>OBEY ALL LAWS</Description>
+                <Description>DRIVE ONLY IF LICENSED AND INSURED</Description>
+            </Descriptions>
+        </Probation>
+        <History>
+            <Viol>
+                <Type>VIOL</Type>
+                <Mnemonic>ABS</Mnemonic>
+                <IncidentDate>
+                    <Year>2011</Year>
+                    <Month>1</Month>
+                    <Day>5</Day>
+                </IncidentDate>
+                <ConvictionDate>
+                    <Year>2011</Year>
+                    <Month>3</Month>
+                    <Day>3</Day>
+                </ConvictionDate>
+                <ModifiedDate>
+                    <Year>2011</Year>
+                    <Month>3</Month>
+                    <Day>8</Day>
+                </ModifiedDate>
+                <State>
+                    <Abbrev>CA</Abbrev>
+                    <Full>CALIFORNIA</Full>
+                </State>
+                <Location>SAN LUIS OBISPO</Location>
+                <LocationCode>40410</LocationCode>
+                <Incident>
+                    <DescSmall>DRIVING WITH BAC OF .08 OR MORE</DescSmall>
+                    <StateCode>23152B</StateCode>
+                    <StateDesc>DRIVING WITH BAC OF .08 OR MORE</StateDesc>
+                    <DescLarge>DRIVING WITH BAC OF .08 OR MORE</DescLarge>
+                    <ADRPoints>-</ADRPoints>
+                    <ACDCode>A08</ACDCode>
+                    <AVDCode>CB03</AVDCode>
+                    <AVD2>CB03</AVD2>
+                    <CompanyCode>15</CompanyCode>
+                    <StatePoints>2</StatePoints>
+                    <Key>CAA0123152B</Key>
+                </Incident>
+                <Incident>
+                    <DescSmall>ADDITIONAL COURT-IMPOSED ORDERS</DescSmall>
+                    <StateCode>23593</StateCode>
+                    <StateDesc>ADDITIONAL COURT-IMPOSED ORDERS AND DIRECTIONS</StateDesc>
+                    <DescLarge>ADDITIONAL COURT-IMPOSED ORDERS AND DIRECTIONS</DescLarge>
+                    <ADRPoints>-</ADRPoints>
+                    <ACDCode>-</ACDCode>
+                    <AVDCode>UE08</AVDCode>
+                    <AVD2>UE08</AVD2>
+                    <CompanyCode>4</CompanyCode>
+                    <Key>CAA0123593</Key>
+                </Incident>
+                <Commercial>N</Commercial>
+                <Hazmat>N</Hazmat>
+                <Docket>M412345</Docket>
+            </Viol>
+            <Action>
+                <Type>ACTION</Type>
+                <Mnemonic>SUSPENSION</Mnemonic>
+                <IncidentDate>
+                    <Year>2011</Year>
+                    <Month>3</Month>
+                    <Day>3</Day>
+                </IncidentDate>
+                <MailDate>
+                    <Year>2011</Year>
+                    <Month>3</Month>
+                    <Day>15</Day>
+                </MailDate>
+                <State>
+                    <Abbrev>CA</Abbrev>
+                    <Full>CALIFORNIA</Full>
+                </State>
+                <Incident>
+                    <DescSmall>SUSP/REV DUI OR SPEED CONTEST</DescSmall>
+                    <StateCode>13352A1</StateCode>
+                    <DescLarge>SUSPENSION OR REVOCATION FOR DUI OR SPEED CONTEST</DescLarge>
+                    <ACDCode>-</ACDCode>
+                    <AVDCode>DB31</AVDCode>
+                    <AVD2>DB31</AVD2>
+                    <CompanyCode>15</CompanyCode>
+                    <Key>CAA0113352A1</Key>
+                </Incident>
+                <Additional>MAILED, NOT RETURNED UNCLAIMED</Additional>
+                <Commercial>N</Commercial>
+                <Hazmat>N</Hazmat>
+                <ActualDate>
+                    <Year>2011</Year>
+                    <Month>3</Month>
+                    <Day>3</Day>
+                </ActualDate>
+                <ActionEndDate>
+                    <Year>2011</Year>
+                    <Month>6</Month>
+                    <Day>1</Day>
+                </ActionEndDate>
+                <SuspFlag>Y</SuspFlag>
+            </Action>
+        </History>
+
+        <Format>HTML</Format><Data><![CDATA[<HTML>
+<HEAD>
+<TITLE>DRIVER'S LICENSE REPORT</TITLE>
+
+</HEAD>
+
+<BODY bgColor="ivory" leftMargin="1" topMargin="0">
+
+<hr width="764" align="left" style="BACKGROUND-COLOR: lightsteelblue; HEIGHT: 4px">
+<table center width="740">
+<tr>
+<td height=17><font size=3 face="Times New Roman"><strong>American Driving Records, Inc.</strong></font></td>
+<td height=17><font size=3 face="Times New Roman">PO Box 1970</font></td>
+<td height=17><font size=3 face="Times New Roman">Rancho Cordova, CA 95741-1970</font></td>
+</tr>
+</table>
+<table center width="740">
+<tr>
+<td height=17><font size=2 face="Times New Roman"><strong>CALIFORNIA&nbsp;Driver Record&nbsp; - X9999</strong></font></td>
+<td height=17><font size=2 face="Times New Roman"><strong>Order Date: 07/28/2011 </strong></font></td>
+<td height=17><font size=2 face="Times New Roman"><strong>Seq #: 0</strong></font></td>
+</tr>
+</table>
+<hr width="740" align="left" style="BACKGROUND-COLOR: gray; HEIGHT: 2px">
+<table center width="740">
+<tr>
+<td width="14%" height=17><font size=2 face="Times New Roman">Host Used:</font></td>
+<td width="27%" height=17><font size=2 face="Times New Roman">Online</font></td>
+<td width="14%" height=17><font size=2 face="Times New Roman">Bill Code:</font></td>
+<td width="27%" height=17><font size=2 face="Times New Roman"></font></td>
+</tr>
+<tr>
+<td width="14%" height=17><font size=2 face="Times New Roman">Rec Type:</font></td>
+<td width="27%" height=17><font size=2 face="Times New Roman"></font></td>
+<td width="14%" height=17><font size=2 face="Times New Roman">Reference:</font></td>
+<td width="27%" height=17><font size=2 face="Times New Roman">TEST ONE</font></td>
+</tr>
+<tr>
+<td width="14%" height=17><font size=2 face="Times New Roman"></font></td>
+<td width="27%" height=17><font size=2 face="Times New Roman"></font></td>
+<td width="14%" height=17><font size=2 face="Times New Roman">License:</font></td>
+<td width="27%" height=17><font size=2 face="Times New Roman">L2011143</font></td>
+</tr>
+<tr>
+<td width="14%" height=17><font size=2 face="Times New Roman"></font></td>
+<td width="27%" height=17><font size=2 face="Times New Roman"></font></td>
+</tr>
+<tr>
+<td width="14%" height=17><font size=2 face="Times New Roman"></font></td>
+<td width="27%" height=17><font size=2 face="Times New Roman"></font></td>
+<td width="14%" height=17><font size=2 face="Times New Roman">Name:</font></td>
+<td width="27%" height=17><font size=2 face="Times New Roman">RODRIGUEZ, JAIVER J</font></td>
+</tr>
+<tr>
+<td width="14%" height=17><font size=2 face="Times New Roman"></font></td>
+<td width="27%" height=17><font size=2 face="Times New Roman"></font></td>
+<td width="14%" height=17><font size=2 face="Times New Roman">Address:</font></td>
+<td width="27%" height=17><font size=2 face="Times New Roman">2345 MAIN ST</font></td>
+</tr>
+<tr>
+<td width="14%" height=17><font size=2 face="Times New Roman"></font></td>
+<td width="27%" height=17><font size=2 face="Times New Roman"></font></td>
+<td width="14%" height=17><font size=2 face="Times New Roman">City, St:</font></td>
+<td width="27%" height=17><font size=2 face="Times New Roman">LONG BEACH, CA 93411</font></td>
+</tr>
+<tr>
+<td width="14%" height=17><font size=2 face="Times New Roman"></font></td>
+<td width="27%" height=17><font size=2 face="Times New Roman"></font></td>
+<td width="14%" height=17><font size=2 face="Times New Roman">As of:</font></td>
+<td width="27%" height=17><font size=2 face="Times New Roman">          </font></td>
+</tr>
+</table>
+<hr width="740" align="left" style="BACKGROUND-COLOR: gray; HEIGHT: 2px">
+<table center width="740">
+<tr>
+<td width="7%" height=12><font size=2 face="Times New Roman">Sex:</font></td>
+<td width="14%" height=12><font size=2 face="Times New Roman">      </font></td>
+<td width="7%" height=12><font size=2 face="Times New Roman">Weight:</font></td>
+<td width="14%" height=12><font size=2 face="Times New Roman">150&nbsp;lbs.</font></td>
+<td width="7%" height=12><font size=2 face="Times New Roman">DOB:</font></td>
+<td width="14%" height=12><font size=2 face="Times New Roman">05/25/1975</font></td>
+<td width="7%" height=12><font size=2 face="Times New Roman">Age:</font></td>
+<td width="14%" height=12><font size=2 face="Times New Roman">36 </font></td>
+</tr>
+<tr>
+<td width="7%" height=12><font size=2 face="Times New Roman">Eyes:</font></td>
+<td width="14%" height=12><font size=2 face="Times New Roman">BLUE</font></td>
+<td width="7%" height=12><font size=2 face="Times New Roman">Height:</font></td>
+<td width="14%" height=12><font size=2 face="Times New Roman">5'09"</font></td>
+<td width="7%" height=12><font size=2 face="Times New Roman">Iss Date:</font></td>
+<td width="14%" height=12><font size=2 face="Times New Roman">10/18/2007</font></td>
+<td width="7%" height=12><font size=2 face="Times New Roman"></font></td>
+<td width="14%" height=12><font size=2 face="Times New Roman"></font></td>
+</tr>
+<tr>
+<td width="7%" height=12><font size=2 face="Times New Roman">Hair:</font></td>
+<td width="14%" height=12><font size=2 face="Times New Roman">BROWN</font></td>
+<td width="7%" height=12><font size=2 face="Times New Roman"></font></td>
+<td width="14%" height=12><font size=2 face="Times New Roman"></font></td>
+<td width="7%" height=12><font size=2 face="Times New Roman">Exp Date:</font></td>
+<td width="14%" height=12><font size=2 face="Times New Roman">10/20/2012</font></td>
+<td width="7%" height=12><font size=2 face="Times New Roman"></font></td>
+<td width="14%" height=12><font size=2 face="Times New Roman"></font></td>
+</tr>
+</table>
+<hr width="740" align="left" style="BACKGROUND-COLOR: gray; HEIGHT: 2px">
+<table center width="740">
+<tr>
+<td width="60%" height=17><font size=2 face="Times New Roman">Approx. Year Lic. First Issued: 1968</font></td>
+<td width="40%" height=17><font size=2 face="Times New Roman">STATUS:&nbsp;VALID</font></td>
+</tr>
+</table>
+<hr width="740" align="left" style="BACKGROUND-COLOR: gray; HEIGHT: 2px">
+<table cellspacing="0" cellpadding="0">
+<tr>
+<td><font size="3" face="Times New Roman" color="darkblue" ><strong>Violations/Convictions&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Failures To Appear&nbsp;&nbsp;&nbsp;&nbsp;   Accidents</strong></font></td>
+</tr>
+</table>
+<table center width="740">
+<tr>
+<td width="3%" height=12><font size=1 face="Times New Roman">TYPE</font></td>
+<td width="7%" height=12><font size=1 face="Times New Roman">VIOL</font></td>
+<td width="7%" height=12><font size=1 face="Times New Roman">CONV</font></td>
+<td width="4%" height=12><font size=1 face="Times New Roman">ACD</font></td>
+<td width="4%" height=12><font size=1 face="Times New Roman">AVD</font></td>
+<td width="5%" height=12><font size=1 face="Times New Roman">V/C</font></td>
+<td width="25%" height=12><font size=1 face="Times New Roman">DESCRIPTION</font></td>
+<td width="10%" height=12><font size=1 face="Times New Roman">LOCATION</font></td>
+<td width="10%" height=12><font size=1 face="Times New Roman">TICKET</font></td>
+<td width="6%" height=12><font size=1 face="Times New Roman">PLATE</font></td>
+<td width="5%" height=12><font size=1 face="Times New Roman">PT</font></td>
+</tr>
+<tr>
+<td width="3%" height=12><font size=1 face="Times New Roman">ABS</font></td>
+<td width="7%" height=12><font size=1 face="Times New Roman">01/05/2011</font></td>
+<td width="7%" height=12><font size=1 face="Times New Roman">03/03/2011</font></td>
+<td width="4%" height=12><font size=1 face="Times New Roman">A08     </font></td>
+<td width="4%" height=12><font size=1 face="Times New Roman">CB03    </font></td>
+<td width="5%" height=12><font size=1 face="Times New Roman">23152B  </font></td>
+<td width="25%" height=12><font size=1 face="Times New Roman">DRIVING WITH BAC OF .08 OR MORE</font></td>
+<td width="10%" height=12><font size=1 face="Times New Roman">SAN LUIS OBISPO</font></td>
+<td width="10%" height=12><font size=1 face="Times New Roman">M412345</font></td>
+<td width="6%" height=12><font size=1 face="Times New Roman"></font></td>
+<td width="5%" height=12><font size=1 face="Times New Roman">2</font></td>
+<td width="5%" height=12><font size=1 face="Times New Roman">15</font></td>
+</tr>
+<tr>
+<td width="3%" height=12><font size=1 face="Times New Roman"></font></td>
+<td width="7%" height=12><font size=1 face="Times New Roman"></font></td>
+<td width="7%" height=12><font size=1 face="Times New Roman">          </font></td>
+<td width="4%" height=12><font size=1 face="Times New Roman">-       </font></td>
+<td width="4%" height=12><font size=1 face="Times New Roman">UE08    </font></td>
+<td width="5%" height=12><font size=1 face="Times New Roman">23593   </font></td>
+<td width="25%" height=12><font size=1 face="Times New Roman">ADDITIONAL COURT-IMPOSED ORDERS</font></td>
+<td width="10%" height=12><font size=1 face="Times New Roman"></font></td>
+<td width="10%" height=12><font size=1 face="Times New Roman"></font></td>
+<td width="6%" height=12><font size=1 face="Times New Roman"></font></td>
+<td width="5%" height=12><font size=1 face="Times New Roman"></font></td>
+<td width="5%" height=12><font size=1 face="Times New Roman">4</font></td>
+</tr>
+</table>
+<hr width="740" align="left" style="BACKGROUND-COLOR: gray; HEIGHT: 2px">
+<table cellspacing="0" cellpadding="0">
+<tr>
+<td><font size="3" face="Times New Roman" color="darkblue" ><strong>Suspensions/Revocations</strong></font></td>
+</tr>
+</table>
+<table center width="740">
+<tr>
+<td width="13%" height=12><font size=1 face="Times New Roman">ACTIONS</font></td>
+<td width="10%" height=12><font size=1 face="Times New Roman">ORD/DATE</font></td>
+<td width="10%" height=12><font size=1 face="Times New Roman">EFF/DATE</font></td>
+<td width="12%" height=12><font size=1 face="Times New Roman">CLEAR/DATE</font></td>
+<td width="12%" height=12><font size=1 face="Times New Roman">END/DATE</font></td>
+<td width="7%" height=12><font size=1 face="Times New Roman">CODE</font></td>
+<td width="5%" height=12><font size=1 face="Times New Roman">AVD</font></td>
+<td width="39%" height=12><font size=1 face="Times New Roman">DESCRIPTION</font></td>
+</tr>
+<tr>
+<td width="13%" height=12><font size=1 face="Times New Roman">SUSPENSION</font></td>
+<td width="10%" height=12><font size=1 face="Times New Roman">03/15/2011</font></td>
+<td width="10%" height=12><font size=1 face="Times New Roman">03/03/2011</font></td>
+<td width="12%" height=12><font size=1 face="Times New Roman"></font></td>
+<td width="12%" height=12><font size=1 face="Times New Roman">06/01/2011</font></td>
+<td width="7%" height=12><font size=1 face="Times New Roman">13352A1</font></td>
+<td width="5%" height=12><font size=1 face="Times New Roman">DB31</font></td>
+<td width="39%" height=12><font size=1 face="Times New Roman">SUSP/REV DUI OR SPEED CONTEST</font></td>
+</tr>
+<tr>
+<td width="13%" height=12><font size=1 face="Times New Roman"></font></td>
+<td width="10%" height=12><font size=1 face="Times New Roman"></font></td>
+<td width="10%" height=12 colspan=4><font size=1 face="Times New Roman">** MAILED, NOT RETURNED UNCLAIMED</font></td>
+</tr>
+</table>
+<hr width="740" align="left" style="BACKGROUND-COLOR: gray; HEIGHT: 2px">
+<table cellspacing="0" cellpadding="0">
+<tr>
+<td><font size="3" face="Times New Roman" color="darkblue" ><strong>License and Permit Information</strong></font></td>
+</tr>
+</table>
+<table center width="740">
+<tr>
+<td width="22%" height=17><font size=2 face="Times New Roman">License: PERSONAL</font></td>
+<td width="16%" height=17><font size=2 face="Times New Roman">Issue: 10/18/2007</font></td>
+<td width="16%" height=17><font size=2 face="Times New Roman">Expire: 10/20/2012</font></td>
+<td width="16%" height=17><font size=2 face="Times New Roman">Status: VALID</font></td>
+<td width="16%" height=17><font size=2 face="Times New Roman"></font></td>
+<td width="14%" height=17><font size=2 face="Times New Roman"></font></td>
+</tr>
+<tr>
+<td width="22%" height=17><font size=2 face="Times New Roman"></font></td>
+<td width="16%" height=17><font size=2 face="Times New Roman">Class: C    </font></td>
+<td width="16%" height=17 colspan=3><font size=2 face="Times New Roman">NON-COMMERCIAL</font></td>
+</tr>
+<tr>
+<td width="22%" height=17><font size=2 face="Times New Roman"></font></td>
+<td width="16%" height=17 colspan=2><font size=2 face="Times New Roman">Restriction:&nbsp;&nbsp;CORRECTIVE LENSES</font></td>
+</tr>
+</table>
+<hr width="740" align="left" style="BACKGROUND-COLOR: gray; HEIGHT: 2px">
+<table cellspacing="0" cellpadding="0">
+<tr>
+<td><font size="3" face="Times New Roman" color="darkblue" ><strong>Miscellaneous State Data</strong></font></td>
+</tr>
+</table>
+<table width="740 ">
+<tr>
+<td width="100%" height=12><font size=2 face="Times New Roman">PROOF CODE O - COMPLETION OF DRINK DRVR PRGM & PROOF REQ (SR1P UNACCEPT)</font></td>
+</tr>
+</table>
+<table width="740 ">
+<tr>
+<td width="100%" height=12><font size=2 face="Times New Roman">FR PROOF ELIGIBILTY STARTS 09/03/2011</font></td>
+</tr>
+</table>
+<table width="740 ">
+<tr>
+<td width="100%" height=12><font size=2 face="Times New Roman">PROBATION&nbsp;&nbsp;&nbsp;&nbsp;EFFECTIVE: 01/05/2011  TERM: 03/03/2014  DOCK: M412345</font></td>
+</tr>
+</table>
+<table width="740 ">
+<tr>
+<td width="5%" height=12><font size=2 face="Times New Roman"></font></td>
+<td width="95%" height=12><font size=2 face="Times New Roman">SHALL NOT COMMIT CRIMES, REFUSE BAC TEST, OR DRIVE WITH ALCOHOL IN BLOOD</font></td>
+</tr>
+</table>
+<table width="740 ">
+<tr>
+<td width="5%" height=12><font size=2 face="Times New Roman"></font></td>
+<td width="95%" height=12><font size=2 face="Times New Roman">OBEY ALL LAWS</font></td>
+</tr>
+</table>
+<table width="740 ">
+<tr>
+<td width="5%" height=12><font size=2 face="Times New Roman"></font></td>
+<td width="95%" height=12><font size=2 face="Times New Roman">DRIVE ONLY IF LICENSED AND INSURED</font></td>
+</tr>
+</table>
+<hr width="764" align="left" style="BACKGROUND-COLOR: lightsteelblue; HEIGHT: 4px">
+<table width="740">
+<tr>
+<td width="50%" height=12><font size=2 face="Times New Roman">END OF REPORT FOR RODRIGUEZ, JAIVER J</font></td>
+<td width="50%" height=12><font size=2 face="Times New Roman">(CONTROL NUMBER: 000001)</font></td>
+</tr>
+</table>
+
+
+<HR  align="left" style="WIDTH: 740px; BACKGROUND-COLOR: lightsteelblue" SIZE=2>
+
+
+
+</BODY>
+</HTML>
+]]></Data></MVR2000>
+</ADR>

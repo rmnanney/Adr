@@ -30,6 +30,8 @@ class Response extends \DOMDocument
     private $additionalNodes;
     private $historyNodes;
     private $summaryNode;
+    private $data;
+    private $format;
     const XPATH_ORDER = '/ADR/MVR2000/Order';
     const XPATH_RETURN = '/ADR/MVR2000/Return';
     const XPATH_DRIVER = '/ADR/MVR2000/Driver';
@@ -38,6 +40,8 @@ class Response extends \DOMDocument
     const XPATH_ADDITIONAL = '/ADR/MVR2000/Additional';
     const XPATH_HISTORY = '/ADR/MVR2000/History';
     const XPATH_SUMMARY = '/ADR/Summary';
+    const XPATH_DATA = '/ADR/MVR2000/Data';
+    const XPATH_FORMAT = '/ADR/MVR2000/Format';
 
     /**
      * Response constructor.
@@ -103,6 +107,14 @@ class Response extends \DOMDocument
         foreach ($result as $node) {
             $this->summaryNode = new SummaryNode($node);
         }
+//        $result = $xpath->query(self::XPATH_DATA);
+//        foreach ($result as $node) {
+//            $this->data = $node->nodeValue;
+//        }
+//        $result = $xpath->query(self::XPATH_FORMAT);
+//        foreach ($result as $node){
+//            $this->format = $node->nodeValue;
+//        }
     }
 
     /**
@@ -191,6 +203,24 @@ class Response extends \DOMDocument
     {
         return $this->historyNodes;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getReportData()
+    {
+        return $this->data;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getReportFormat()
+    {
+        return $this->format;
+    }
+
+
 
 
     /**

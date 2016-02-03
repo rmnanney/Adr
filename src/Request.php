@@ -17,6 +17,7 @@ class Request extends \DOMDocument
     private $Password;              //EG: asdf.1234
     private $NewPassword;           //EG: 4321.fdsa
     private $ReportType;            //EG: XML
+    private $AdditionalReportType;            //EG: HTML
     private $xmlStr;
     private $ADRIPAddress;
     private $ADRPort;
@@ -57,6 +58,8 @@ class Request extends \DOMDocument
         $response->loadXML($xmlResponse);
         $response->parse();
 
+        print_r($xmlResponse);
+
         //Let's check for any errors
         if($response->getError() != '0'){
             throw new \Exception('ADR ERROR: ' . $response->getError() . ' ' . $response->getErrorDescription() . PHP_EOL);
@@ -90,6 +93,9 @@ class Request extends \DOMDocument
             $comm->appendChild($doc->createElement('NewPassword', $this->NewPassword));
         }
         $comm->appendChild($doc->createElement('ReportType', $this->ReportType));
+//        if(!empty($this->AdditionalReportType)){
+//            $comm->appendChild($doc->createElement('AdditionalReportType', $this->AdditionalReportType));
+//        }
         $adr->appendChild($comm);
 
         //we may want to support multiple orders soon.
@@ -209,6 +215,16 @@ class Request extends \DOMDocument
     {
         $this->ReportType = $ReportType;
     }
+
+    /**
+     * @param mixed $AdditionalReportType Ensure you use \Adr\Request\AdditionalReportType to lookup the type.
+     */
+    public function setAdditionalReportType($AdditionalReportType)
+    {
+        $this->AdditionalReportType = $AdditionalReportType;
+    }
+
+
 
     /**
      * @param Request\Order $order
