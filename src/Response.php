@@ -107,14 +107,14 @@ class Response extends \DOMDocument
         foreach ($result as $node) {
             $this->summaryNode = new SummaryNode($node);
         }
-//        $result = $xpath->query(self::XPATH_DATA);
-//        foreach ($result as $node) {
-//            $this->data = $node->nodeValue;
-//        }
-//        $result = $xpath->query(self::XPATH_FORMAT);
-//        foreach ($result as $node){
-//            $this->format = $node->nodeValue;
-//        }
+        $result = $xpath->query(self::XPATH_DATA);
+        foreach ($result as $node) {
+            $this->data = $node->nodeValue;
+        }
+        $result = $xpath->query(self::XPATH_FORMAT);
+        foreach ($result as $node){
+            $this->format = $node->nodeValue;
+        }
     }
 
     /**

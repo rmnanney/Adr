@@ -46,7 +46,7 @@ $CONFIG_USERID = $adrConfig['userID'];
 $CONFIG_PASSWORD = $adrConfig['password'];
 $CONFIG_REPORTTYPE = $adrConfig['reportType'];
 $CONFIG_ADRIPADDRESS = $adrConfig['ADRIPAddress'];
-$CONFIG_ADRPORT = $adrConfig['adrADRPortport'];
+$CONFIG_ADRPORT = $adrConfig['ADRPort'];
 
 //Setup the request to be send to ADR (American Driving Records) WebMVR.
 $requestOrder = new Order();  //NOTE: This is a Request\Order, NOT a Response\Order;  they are different!
@@ -104,6 +104,10 @@ try{
 } catch (Exception $e) {
     print "Exception found : " . $e->getMessage();
 }
+
+//If you wanted to get the HTML report, assuming you set it above: $request->setAdditionalReportType(\Adr\Request\AdditionalReportType::HTML);
+//print $response->getReportData();
+//print $response->getReportFormat();
 
 
 print $response->getXML();
